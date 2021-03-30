@@ -8,31 +8,31 @@ I use a git bare repository to track changes to specific configuration files. Th
 
 ## Replicating this setup
 
-Make a git bare repository:
+Make a git bare repository and an alias:
 ```
-mkdir $HOME/dotfiles
-git init --bare $HOME/dotfiles
-echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'" >> $HOME/.bashrc
+$ mkdir $HOME/dotfiles
+$ git init --bare $HOME/dotfiles
+$ echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'" >> $HOME/.bashrc
 ```
 
 Restart:
 ```
-bash
+$ bash
 ```
 We are only interested in tracking the files we specify. We don't care about the rest.
 ```
-config config --local status.showUntrackedFiles no
+$ config config --local status.showUntrackedFiles no
 ```
 Use `config` instead of `git` to add, remove, commit, etc.
 ```
-config status
+$ config status
 ```
 ```
-config add <file>
+$ config add <file>
 ```
 ```
-config commit -m "<message>"
+$ config commit -m "<message>"
 ```
 ```
-config push
+$ config push
 ```
