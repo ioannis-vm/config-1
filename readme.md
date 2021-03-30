@@ -2,7 +2,11 @@
 
 Configuration files for my ubuntu laptop.
 
-# How I set things up
+## Info
+
+I use a git bare repository to track changes to specific configuration files. This setup has a lot of benefits, like being able to track changes, having an organized collection of all the important configuration files where manual changes have been made, and making it easier to reconfigure things after a reinstall or system migration.
+
+## Replicating this setup
 
 Make a git bare repository:
 ```
@@ -15,24 +19,20 @@ Restart:
 ```
 bash
 ```
-
+We are only interested in tracking the files we specify. We don't care about the rest.
 ```
 config config --local status.showUntrackedFiles no
 ```
-
+Use `config` instead of `git` to add, remove, commit, etc.
 ```
 config status
 ```
-
-Add files:
 ```
 config add <file>
 ```
-
 ```
 config commit -m "<message>"
 ```
-
 ```
 config push
 ```
