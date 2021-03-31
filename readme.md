@@ -16,6 +16,7 @@ $ mkdir $HOME/dotfiles
 $ git init --bare $HOME/dotfiles
 $ echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'" >> $HOME/.bashrc
 ```
+Now we can type `config` instead of git, and the repository can be accessed from any directory.
 
 Restart:
 ```
@@ -36,5 +37,17 @@ $ config add <file>
 $ config commit -m "<message>"
 ```
 ```
-$ config push
+$ config push orogin main
+```
+
+Making a branch
+
+```
+$ config checkout -b <branch_name>
+```
+
+Pushing to remote after making a branch
+
+```
+$ config push -u origin <branch>
 ```
