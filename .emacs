@@ -85,6 +85,9 @@
 ;; Set workon home variable
 (setenv "WORKON_HOME" "~/anaconda3/envs")
 
+;; ein
+(require 'ein)
+(require 'ein-notebook)
 
 ;; Org mode
 
@@ -130,17 +133,3 @@
 
 
 ;; User-Defined init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (virtualenv material-theme ein yasnippet-snippets which-key websocket use-package try request py-autopep8 polymode modern-cpp-font-lock magit flycheck elpy deferred blacken better-defaults auto-complete auctex anaphora adaptive-wrap))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
