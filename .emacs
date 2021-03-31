@@ -83,7 +83,7 @@
 (setq jedi:complete-on-dot t)
 
 ;; Set workon home variable
-(setenv "WORKON_HOME" "$HOME/anaconda3/envs/")
+(setenv "WORKON_HOME" "~/anaconda3/envs")
 
 
 ;; Org mode
