@@ -8,6 +8,8 @@ I use a git bare repository to track changes to specific configuration files. Th
 
 ## Replicating this setup
 
+Adapted from [Nicola Paolucci's tutorial](https://www.atlassian.com/git/tutorials/dotfiles).
+
 Make a git bare repository and an alias:
 ```
 $ mkdir $HOME/dotfiles
