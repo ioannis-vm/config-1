@@ -134,5 +134,3 @@ unset __conda_setup
 export PATH=~/.local/bin:$PATH
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
-export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
-
