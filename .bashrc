@@ -132,4 +132,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH=~/.local/bin:$PATH
-alias config='/usr/bin/git --git-dir=/home/johnvm/dotfiles --work-tree=/home/johnvm'
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+
+export DISPLAY=$(ip route|awk '/^default/{print $3}'):0.0
+
