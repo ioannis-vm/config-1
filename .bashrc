@@ -131,6 +131,5 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-export PATH=~/.local/bin:$PATH
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
