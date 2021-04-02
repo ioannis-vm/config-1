@@ -122,10 +122,10 @@ __conda_setup="$('/home/johnvm/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/johnvm/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/johnvm/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "~/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "~/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/johnvm/anaconda3/bin:$PATH"
+        export PATH="~/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
