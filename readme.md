@@ -1,6 +1,6 @@
 # config-1
 
-Configuration files for my ubuntu instances.
+Configuration files for my ubuntu laptop.
 
 ## Info
 
