@@ -39,15 +39,3 @@ $ config commit -m "<message>"
 ```
 $ config push orogin main
 ```
-
-Making a branch
-
-```
-$ config checkout -b <branch_name>
-```
-
-Pushing to remote after making a branch
-
-```
-$ config push -u origin <branch>
-```

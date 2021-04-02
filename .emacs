@@ -85,15 +85,9 @@
 ;; Set workon home variable
 (setenv "WORKON_HOME" "~/anaconda3/envs")
 
-<<<<<<< HEAD
-;; EIN
-(setq ein:output-area-inlined-images t)
-(setq ein:use-none-backend t)
-=======
 ;; ein
 (require 'ein)
 (require 'ein-notebook)
->>>>>>> ef39534e1814ce2dfdbfad8add711ad97690b1cd
 
 ;; Org mode
 
