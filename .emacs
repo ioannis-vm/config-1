@@ -1,9 +1,9 @@
-;;   __                 
+;;   __
 ;;   \ \/\   /\/\/\     John Vouvakis Manousakis
 ;;    \ \ \ / /    \    emacs configuration file
-;; /\_/ /\ V / /\/\ \   
-;; \___/  \_/\/    \/   
-;;                      
+;; /\_/ /\ V / /\/\ \
+;; \___/  \_/\/    \/
+;;
 
 ;; ===================================
 ;; MELPA Package Support
@@ -11,9 +11,9 @@
 ;; Enables basic packaging support
 (require 'package)
 
-; Adds the Melpa archive to the list of available repositories
+					; Adds the Melpa archive to the list of available repositories
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
+	     '("melpa" . "http://melpa.org/packages/") t)
 
 ;; Initializes the package infrastructure
 (package-initialize)
@@ -37,14 +37,15 @@
     material-theme                  ;; Theme
     jedi                            ;; a Python auto-completion for Emacs
     auctex                          ;; Integrated environment for *TeX*
+    markdown-mode                   ;; markdown mode
     )
   )
 
 ;; Scans the list in myPackages
 ;; If the package listed is not already installed, install it
 (mapc #'(lambda (package)
-          (unless (package-installed-p package)
-            (package-install package)))
+	  (unless (package-installed-p package)
+	    (package-install package)))
       myPackages)
 
 ;; ===================================
@@ -68,7 +69,7 @@
       python-shell-interpreter-args "console --simple-prompt"
       python-shell-prompt-detect-failure-warning nil)
 (add-to-list 'python-shell-completion-native-disabled-interpreters
-             "jupyter")
+	     "jupyter")
 
 ;; Enable Flycheck
 (when (require 'flycheck nil t)
@@ -95,6 +96,11 @@
 (add-hook 'org-mode-hook #'visual-line-mode)
 (add-hook 'org-mode-hook #'adaptive-wrap-prefix-mode)
 
+;; rmd
+(add-to-list 'auto-mode-alist '("\\.rmd\\'" . markdown-mode))
+(add-hook 'markdown-mode-hook #'visual-line-mode)
+(add-hook 'markdown-mode-hook #'adaptive-wrap-prefix-mode)
+
 ;; LaTeX
 
 ;; Disable auto-fill-mode to prevent emacs from putting line breaks
@@ -119,12 +125,12 @@
 ;; evince-dvi backend should be installed
 (setq TeX-view-program-selection
       '((output-dvi "DVI Viewer")
-        (output-pdf "PDF Viewer")
-        (output-html "Google Chrome")))
+	(output-pdf "PDF Viewer")
+	(output-html "Google Chrome")))
 (setq TeX-view-program-list
       '(("DVI Viewer" "evince %o")
-        ("PDF Viewer" "evince %o")
-        ("Google Chrome" "google-chrome %o")))
+	("PDF Viewer" "evince %o")
+	("Google Chrome" "google-chrome %o")))
 
 (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
 (add-hook 'LaTeX-mode-hook (lambda () (abbrev-mode +1)))
