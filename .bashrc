@@ -133,4 +133,4 @@ unset __conda_setup
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
-neofetch
+# neofetch is slow on my old laptop!
