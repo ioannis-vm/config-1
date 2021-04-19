@@ -1,6 +1,6 @@
 # config-1
 
-Configuration files for my ubuntu laptop.
+My configuration files.
 
 ## Info
 
@@ -10,32 +10,37 @@ I use a git bare repository to track changes to specific configuration files. Th
 
 Adapted from [Nicola Paolucci's tutorial](https://www.atlassian.com/git/tutorials/dotfiles).
 
-Make a git bare repository and an alias:
+Making a git bare repository and an alias:
 ```
 $ mkdir $HOME/dotfiles
 $ git init --bare $HOME/dotfiles
 $ echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'" >> $HOME/.bashrc
 ```
-Now we can type `config` instead of git, and the repository can be accessed from any directory.
+Now `config` can be issued instaed of `git`, and the repository can be accessed from any directory.
 
 Restart:
 ```
 $ bash
 ```
-We are only interested in tracking the files we specify. We don't care about the rest.
+Don't show untracked files.
 ```
 $ config config --local status.showUntrackedFiles no
 ```
-Use `config` instead of `git` to add, remove, commit, etc.
+Add, remove, commit, etc etc.
 ```
 $ config status
-```
-```
 $ config add <file>
-```
-```
 $ config commit -m "<message>"
-```
-```
 $ config push orogin main
+```
+
+# Port the dotfiles on a new device
+
+```
+$ mkdir $HOME/dotfiles
+$ git init --bare $HOME/dotfiles
+$ echo "alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'" >> $HOME/.bashrc
+
+config remote add origin https://github.com/ioannis-vm/config-1
+config pull origin main
 ```

@@ -32,6 +32,7 @@
     auctex                          ;; Integrated environment for *TeX*
     markdown-mode                   ;; markdown mode
     adaptive-wrap                   ;; Smart line-wrapping with wrap-prefix
+    material-theme                  ;; A nice theme
     )
   )
 
@@ -94,3 +95,17 @@
 
 ;; User-Defined init.el ends here
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (material-theme py-autopep8 markdown-mode magit elpy blacken auctex adaptive-wrap))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
