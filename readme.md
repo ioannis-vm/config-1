@@ -31,7 +31,7 @@ Add, remove, commit, etc etc.
 $ config status
 $ config add <file>
 $ config commit -m "<message>"
-$ config push orogin main
+$ config push origin main
 ```
 
 # Port the dotfiles on a new device
