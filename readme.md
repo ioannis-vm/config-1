@@ -39,7 +39,7 @@ config push origin main
 
 ## Use the existing git bare repo and dotfiles on a new device
 
-Steps 1-3, and then
+Steps 1-3, backup existing local dotfiles if needed, and then
 ```
 config remote add origin https://github.com/ioannis-vm/config-1
 config pull origin main
