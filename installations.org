@@ -1,0 +1,77 @@
+** Command Reference
+
+#+BEGIN_SRC bash
+sudo apt autoremove
+sudo apt update
+sudo apt upgrade
+#+END_SRC
+
+** Installing the tools I need
+
+#+BEGIN_SRC bash
+sudo apt install 
+#+END_SRC
+
+Zotero
+
+#+BEGIN_SRC bash
+wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
+sudo apt update
+sudo apt install zotero
+#+END_SRC
+
+Anaconda
+
+#+BEGIN_SRC bash
+sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+#+END_SRC
+(download installer from their website)
+#+BEGIN_SRC bash
+sudo bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh # last time I did it
+#+END_SRC
+
+R and RStudio
+
+#+BEGIN_SRC bash
+sudo apt -y install r-base
+wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
+sudo apt install ./rstudio-1.2.5042-amd64.deb
+#+END_SRC
+
+Texlive-full and Texstudio
+
+#+BEGIN_SRC bash
+sudo apt-get install texlive-full
+sudo apt-get install texstudio
+#+END_SRC
+
+Tor
+
+#+BEGIN_SRC bash
+sudo add-apt-repository ppa:micahflee/ppa
+sudo apt install torbrowser-launcher
+#+END_SRC
+
+Anydesk
+
+#+BEGIN_SRC bash
+wget $(wget -q -O anydesk https://anydesk.com/en/downloads/linux && grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*amd64.deb" anydesk | head -1 ) && rm anydesk
+sudo chmod +x anydesk_6.1.0-1_amd64.deb (or whatever version)
+sudo apt install ./anydesk_6.1.0-1_amd64.deb
+#+END_SRC
+
+** Scientific Computing
+
+*** R
+
+#+BEGIN_SRC R
+install.packages("plotly")  # an amazing plotting library
+install.packages("webshot") # knit plotly figures to pdf
+webshot::install_phantomjs()
+#+END_SRC
+
+** Drivers
+
+Network card driver installation guide
+https://gist.github.com/smac89/6101a814e44562e0420712731f386438
+
