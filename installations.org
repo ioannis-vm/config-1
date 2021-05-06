@@ -6,24 +6,34 @@ sudo apt update
 sudo apt upgrade
 #+END_SRC
 
-** Installing the tools I need
+** Installing software
+
+Emacs
 
 #+BEGIN_SRC bash
-sudo apt install 
+sudo apt install -y emacs26
 #+END_SRC
+
+Evince
+
+#+BEGIN_SRC bash
+sudo apt remove -y evince --autoremove
+sudo snap install evince
+#+END_SRC
+
 
 Zotero
 
 #+BEGIN_SRC bash
 wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
-sudo apt update
-sudo apt install zotero
+sudo apt update -y
+sudo apt install -y zotero
 #+END_SRC
 
 Anaconda
 
 #+BEGIN_SRC bash
-sudo apt-get install libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
+sudo apt-get install -y libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
 #+END_SRC
 (download installer from their website)
 #+BEGIN_SRC bash
@@ -33,23 +43,22 @@ sudo bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh # last time I did it
 R and RStudio
 
 #+BEGIN_SRC bash
-sudo apt -y install r-base
+sudo apt install -y r-base
 wget https://download1.rstudio.org/desktop/bionic/amd64/rstudio-1.2.5042-amd64.deb
-sudo apt install ./rstudio-1.2.5042-amd64.deb
+sudo apt install  ./rstudio-1.2.5042-amd64.deb
 #+END_SRC
 
 Texlive-full and Texstudio
 
 #+BEGIN_SRC bash
-sudo apt-get install texlive-full
-sudo apt-get install texstudio
+sudo apt-get install -y texlive-full texstudio
 #+END_SRC
 
 Tor
 
 #+BEGIN_SRC bash
 sudo add-apt-repository ppa:micahflee/ppa
-sudo apt install torbrowser-launcher
+sudo apt install -y torbrowser-launcher
 #+END_SRC
 
 Anydesk
@@ -60,7 +69,11 @@ sudo chmod +x anydesk_6.1.0-1_amd64.deb (or whatever version)
 sudo apt install ./anydesk_6.1.0-1_amd64.deb
 #+END_SRC
 
-** Scientific Computing
+** Scientific Computing - Installing Packages
+
+*** Python
+
+[[https://conda.io/projects/conda/en/latest/user-guide/index.html][Conda User Guide]]
 
 *** R
 
