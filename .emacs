@@ -33,6 +33,11 @@
     markdown-mode                   ;; markdown mode
     adaptive-wrap                   ;; Smart line-wrapping with wrap-prefix
     material-theme                  ;; A nice theme
+    irony                           ;; C/C++ minor mode powered by libclang
+    irony-eldoc                     ;; irony-mode support for eldoc-mode
+    flycheck-irony                  ;; Flycheck: C/C++ support via Irony
+    company-irony                   ;; company-mode completion back-end for irony-mode
+    rtags                           ;; A front-end for rtags
     )
   )
 
@@ -50,7 +55,7 @@
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (tool-bar-mode -1)                  ;; Hide toolbar
 (global-linum-mode t)               ;; Enable line numbers globally
-
+(show-paren-mode 1)                 ;; Show parenthesis matching
 
 ;; ===================================
 ;; Dired
@@ -64,13 +69,58 @@
 
 (elpy-enable)
 (setq elpy-rpc-virtualenv-path 'current)
-(setenv "WORKON_HOME" "~/anaconda3/envs")
+(setenv "WORKON_HOME" "~/anaconda3/envs/")
 
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
 (add-hook 'elpy-mode-hook #'visual-line-mode)
 (add-hook 'elpy-mode-hook #'adaptive-wrap-prefix-mode)
+
+;; ===================================
+;; C++
+;; ===================================
+
+;; https://syamajala.github.io/c-ide.html
+(require 'rtags)
+(require 'company-rtags)
+
+(setq rtags-completions-enabled t)
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends 'company-rtags))
+(setq rtags-autostart-diagnostics t)
+(rtags-enable-standard-keybindings)
+
+;; source code completion
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+;; company mode with irony
+(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+(setq company-backends (delete 'company-semantic company-backends))
+(eval-after-load 'company
+  '(add-to-list
+    'company-backends 'company-irony))
+
+;; tab completion with no delay
+(setq company-idle-delay 0)
+(define-key c-mode-map [(tab)] 'company-complete)
+(define-key c++-mode-map [(tab)] 'company-complete)
+
+;; syntax checking
+(add-hook 'c++-mode-hook 'flycheck-mode)
+(add-hook 'c-mode-hook 'flycheck-mode)
 
 ;; ===================================
 ;; Org mode
