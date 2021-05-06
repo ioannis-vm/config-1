@@ -8,6 +8,12 @@ sudo apt upgrade
 
 ** Installing software
 
+Working environment
+
+#+BEGIN_SRC bash
+sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar
+#+END_SRC
+
 Emacs
 
 #+BEGIN_SRC bash
