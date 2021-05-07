@@ -38,6 +38,7 @@
     flycheck-irony                  ;; Flycheck: C/C++ support via Irony
     company-irony                   ;; company-mode completion back-end for irony-mode
     rtags                           ;; A front-end for rtags
+    company-rtags
     )
   )
 
