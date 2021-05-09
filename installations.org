@@ -75,6 +75,13 @@ sudo chmod +x anydesk_6.1.0-1_amd64.deb (or whatever version)
 sudo apt install ./anydesk_6.1.0-1_amd64.deb
 #+END_SRC
 
+Audio, video
+
+#+BEGIN_SRC bash
+sudo apt install -y ffmpeg audacity
+#+END_SRC
+
+
 ** Scientific Computing - Installing Packages
 
 *** Python
