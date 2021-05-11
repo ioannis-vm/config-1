@@ -2,9 +2,9 @@
 
 import XMonad
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.ManageDocks
 import Data.Monoid
 import System.Exit
-import XMonad.Hooks.ManageDocks
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
 import qualified XMonad.StackSet as W
@@ -56,6 +56,10 @@ myNormalBorderColor  = "#000000"
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
+
+-- https://www.stackage.org/haddock/lts-13.2/xmonad-0.15/src/XMonad.Config.html#keys
+
+
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch a terminal
@@ -73,12 +77,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, 0x1008ff12), spawn "amixer -q sset Master toggle")
     , ((0, 0x1008ff13), spawn "amixer -q sset Master 2%+")
 
-
-
-
-    -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
-
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
@@ -91,8 +89,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Resize viewed windows to the correct size
     , ((modm,               xK_n     ), refresh)
 
-    -- Move focus to the next window
-    , ((mod1Mask,           xK_Tab   ), windows W.focusDown)
+    -- change keyboard layout
+    , ((modm .|. mod1Mask,  xK_space   ), spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
