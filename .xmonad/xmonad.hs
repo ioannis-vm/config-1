@@ -1,14 +1,17 @@
 -- imports
 
 import XMonad
+import XMonad.Hooks.DynamicLog
 import Data.Monoid
 import System.Exit
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
-
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+import Graphics.X11.ExtraTypes.XF86
+import XMonad.Util.EZConfig(additionalKeys)
+import System.IO
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -61,13 +64,25 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
+    -- change brightness
+    , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
+    , ((0, xF86XK_MonBrightnessDown), spawn "lux -s 10%")
+
+    -- volume control
+    , ((0, 0x1008ff11), spawn "amixer -q sset Master 2%-")
+    , ((0, 0x1008ff12), spawn "amixer -q sset Master toggle")
+    , ((0, 0x1008ff13), spawn "amixer -q sset Master 2%+")
+
+
+
+
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
-     -- Rotate through the available layout algorithms
+    -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
 
     --  Reset the layouts on the current workspace to default

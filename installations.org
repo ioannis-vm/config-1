@@ -8,11 +8,21 @@ sudo apt upgrade
 
 ** Installing software
 
-Working environment
+Working environment basics
 
 #+BEGIN_SRC bash
 sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen
 #+END_SRC
+
+Working environment supplemental
+
+#+BEGIN_SRC bash
+git clone https://github.com/Ventto/lux.git && \
+cd lux && \
+sudo make install && \
+sudo lux
+#+END_SRC
+
 
 Emacs
 
