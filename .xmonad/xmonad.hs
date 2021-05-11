@@ -92,6 +92,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- change keyboard layout
     , ((modm .|. mod1Mask,  xK_space   ), spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
 
+    -- print screen
+    , ((0,  xK_Print), spawn "gnome-screenshot")
+    
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
 
