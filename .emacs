@@ -39,6 +39,7 @@
     company-irony                   ;; company-mode completion back-end for irony-mode
     rtags                           ;; A front-end for rtags
     company-rtags
+    haskell-mode                    ;; Work with haskell files
     )
   )
 
@@ -153,7 +154,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (material-theme py-autopep8 markdown-mode magit elpy blacken auctex adaptive-wrap))))
+    (haskell-modeell- haskell-mode material-theme py-autopep8 markdown-mode magit elpy blacken auctex adaptive-wrap))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
