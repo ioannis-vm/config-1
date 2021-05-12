@@ -42,13 +42,10 @@ import XMonad.Hooks.ManageDocks
 -- my applications --
 ---------------------
 
-myTerminal      = "gnome-terminal"
-myBrowser       = "qutebrowser"
-myGuiFM         = "nautilus"
-myPDFreader     = "evince"
-myPrintScreen   = "gnome-screenshot"
-
-
+myTerminal       = "gnome-terminal"
+myBrowser        = "qutebrowser"
+myGuiFM          = "nautilus"
+myPrintScreen    = "gnome-screenshot"
 
 
 ----------------
@@ -75,6 +72,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm,               xK_p     ), spawn "dmenu_run")
 
+    -- launch browser
+    , ((modm,               xK_b     ), spawn myBrowser)
+
+    -- launch file manager
+    , ((modm,               xK_e     ), spawn myGuiFM)
+    
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
     , ((0, xF86XK_MonBrightnessDown), spawn "lux -s 10%")
@@ -135,12 +138,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
-    -- Toggle the status bar gap
-    -- Use this binding with avoidStruts from Hooks.ManageDocks.
-    -- See also the statusBar function from Hooks.DynamicLog.
-    --
-    , ((modm              , xK_b     ), sendMessage ToggleStruts)
-
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
@@ -156,15 +153,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-    ++
-
-    --
-    -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
-    -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
-    --
-    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
-        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
-        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
 --------------------
