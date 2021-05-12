@@ -8,6 +8,7 @@
 ;; ===================================
 ;; MELPA Package Support
 ;; ===================================
+
 ;; Enables basic packaging support
 (require 'package)
 
@@ -56,8 +57,30 @@
 (load-theme 'material t)            ;; Load material theme
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (tool-bar-mode -1)                  ;; Hide toolbar
+(menu-bar-mode -1)                  ;; Hide menu bar
+(scroll-bar-mode -1)                ;; Hide scrollbar
 (global-linum-mode t)               ;; Enable line numbers globally
 (show-paren-mode 1)                 ;; Show parenthesis matching
+
+;; ===================================
+;; +Transparency
+;; ===================================
+
+(set-frame-parameter (selected-frame) 'alpha '(80 . 50))
+(add-to-list 'default-frame-alist '(alpha . (80 . 50)))
+
+(defun toggle-transparency ()
+  (interactive)
+  (let ((alpha (frame-parameter nil 'alpha)))
+    (set-frame-parameter
+     nil 'alpha
+     (if (eql (cond ((numberp alpha) alpha)
+		    ((numberp (cdr alpha)) (cdr alpha))
+		    ;; Also handle undocumented (<active> <inactive>) form.
+		    ((numberp (cadr alpha)) (cadr alpha)))
+	      100)
+	 '(85 . 50) '(100 . 100)))))
+(global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; ===================================
 ;; Dired
@@ -140,24 +163,4 @@
 (add-hook 'markdown-mode-hook #'visual-line-mode)
 (add-hook 'markdown-mode-hook #'adaptive-wrap-prefix-mode)
 
-
-
-
-
-
 ;; User-Defined init.el ends here
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (haskell-modeell- haskell-mode material-theme py-autopep8 markdown-mode magit elpy blacken auctex adaptive-wrap))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
