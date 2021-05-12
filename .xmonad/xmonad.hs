@@ -1,64 +1,71 @@
--- imports
+-------------
+-- imports --
+-------------
 
-import XMonad
-import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.ManageDocks
+-- Basics
+import XMonad -- standard library
+import System.IO
 import Data.Monoid
 import System.Exit
-import XMonad.Util.SpawnOnce
-import XMonad.Util.Run
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
+-- Running scripts
+import XMonad.Util.SpawnOnce
+
+-- Key bindings
+import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
-import XMonad.Util.EZConfig(additionalKeys)
-import System.IO
 
--- The preferred terminal program, which is used in a binding below and by
--- certain contrib modules.
---
+-- Sizing of floating windows
+import XMonad.Hooks.ManageHelpers (doRectFloat)
+import qualified XMonad.StackSet as W
+import Data.Ratio
+
+-- eliminate unnecessary window borders
+import XMonad.Layout.NoBorders (smartBorders)
+-- gaps around windows
+import XMonad.Layout.Spacing
+-- full-screen view automation
+import XMonad.Hooks.EwmhDesktops
+
+-- communicating with processes
+import XMonad.Util.Run
+-- customizing logHook --> xmobar
+import XMonad.Hooks.DynamicLog
+-- no overlap for windows over xmobar
+import XMonad.Hooks.ManageDocks
+
+----------------------------------------------------------------
+
+---------------------
+-- my applications --
+---------------------
+
 myTerminal      = "gnome-terminal"
+myBrowser       = "qutebrowser"
+myGuiFM         = "nautilus"
+myPDFreader     = "evince"
+myPrintScreen   = "gnome-screenshot"
 
--- Whether focus follows the mouse pointer.
-myFocusFollowsMouse :: Bool
-myFocusFollowsMouse = True
 
--- Whether clicking on a window to focus also passes the click to the window
-myClickJustFocuses :: Bool
-myClickJustFocuses = False
 
--- Width of the window border in pixels.
---
-myBorderWidth   = 6
 
--- modMask lets you specify which modkey you want to use. The default
--- is mod1Mask ("left alt").  You may also consider using mod3Mask
--- ("right alt"), which does not conflict with emacs keybindings. The
--- "windows key" is usually mod4Mask.
---
-myModMask       = mod4Mask
+----------------
+-- workspaces --
+----------------
 
--- The default number of workspaces (virtual screens) and their names.
--- By default we use numeric strings, but any string may be used as a
--- workspace name. The number of workspaces is determined by the length
--- of this list.
---
--- A tagging example:
---
--- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
---
+myWorkspaces :: [String]
 myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
--- Border colors for unfocused and focused windows, respectively.
---
-myFocusedBorderColor = "#3d3d3d"
-myNormalBorderColor  = "#000000"
 
-------------------------------------------------------------------------
--- Key bindings. Add, modify or remove key bindings here.
---
+------------------
+-- Key bindings --
+------------------
 
 -- https://www.stackage.org/haddock/lts-13.2/xmonad-0.15/src/XMonad.Config.html#keys
 
+myModMask       = mod4Mask
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -93,7 +100,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. mod1Mask,  xK_space   ), spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
 
     -- print screen
-    , ((0,  xK_Print), spawn "gnome-screenshot")
+    , ((0,  xK_Print), spawn myPrintScreen)
     
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
@@ -132,7 +139,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -160,9 +167,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 
-------------------------------------------------------------------------
--- Mouse bindings: default actions bound to mouse events
---
+--------------------
+-- Mouse bindings --
+--------------------
+
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- mod-button1, Set the window to floating mode and move by dragging
@@ -179,18 +187,45 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-------------------------------------------------------------------------
--- Layouts:
 
--- You can specify and transform your layouts by modifying these values.
--- If you change layout bindings be sure to use 'mod-shift-space' after
--- restarting (with 'mod-q') to reset your layout state to the new
--- defaults, as xmonad preserves your old layout settings by default.
---
--- The available layouts.  Note that each layout is separated by |||,
--- which denotes layout choice.
---
-myLayout = avoidStruts (tiled ||| Full)
+
+
+-----------------------
+-- window aisthetics --
+-----------------------
+
+-- Whether focus follows the mouse pointer.
+myFocusFollowsMouse :: Bool
+myFocusFollowsMouse = True
+myClickJustFocuses :: Bool
+myClickJustFocuses = False
+
+-- Gaps around and between windows
+-- Changes applied after relogging in
+-- Dimensions are given as (Border top bottom right left)
+mySpacing = spacingRaw True             -- Only for >1 window
+                       -- The bottom edge seems to look narrower than it is
+                       (Border 5 5 5 5) -- Size of screen edge gaps
+                       True             -- Enable screen edge gaps
+                       (Border 5 5 5 5) -- Size of window gaps
+                       True             -- Enable window gaps
+
+myBorderWidth :: Dimension
+myBorderWidth = 2
+
+myNormalBorderColor, myFocusedBorderColor :: [Char]
+myNormalBorderColor = "#111111"
+myFocusedBorderColor = "#268bd2"
+
+
+
+
+
+-------------
+-- Layouts --
+-------------
+
+myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -206,8 +241,9 @@ myLayout = avoidStruts (tiled ||| Full)
 
 
 
-------------------------------------------------------------------------
--- Window rules:
+------------------
+-- Window rules --
+------------------
 
 -- Execute arbitrary actions and WindowSet manipulations when managing
 -- a new window. You can use this to, for example, always float a
@@ -222,58 +258,49 @@ myLayout = avoidStruts (tiled ||| Full)
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "MPlayer"        --> doFloat
-    , className =? "Gimp"           --> doFloat
+    [ className =? "Gimp"        --> doFloat
+    , className =? "Calculator"     --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
-------------------------------------------------------------------------
--- Event handling
 
--- * EwmhDesktops users should change this to ewmhDesktopsEventHook
---
--- Defines a custom handler function for X Events. The function should
--- return (All True) if the default handler is to be run afterwards. To
--- combine event hooks use mappend or mconcat from Data.Monoid.
---
+--------------------
+-- Event handling --
+--------------------
+
 myEventHook = mempty
 
-------------------------------------------------------------------------
--- Status bars and logging
+
+-----------------------------
+-- Status bars and logging --
+-----------------------------
 
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
 myLogHook = return ()
 
-------------------------------------------------------------------------
--- Startup hook
 
--- Perform an arbitrary action each time xmonad starts or is restarted
--- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
--- per-workspace layout choices.
---
--- By default, do nothing.
+------------------
+-- Startup hook --
+------------------
+
 myStartupHook = do
                 spawnOnce "compton &"
 		spawnOnce "nitrogen --restore &"
 
 
-------------------------------------------------------------------------
--- Now run xmonad with all the defaults we set up.
 
--- Run xmonad with the settings you specify. No need to modify this.
---
+----------
+-- MAIN --
+----------
+
+
 main = do
        spawnPipe "xmobar -x 0 /home/john_vm/.config/xmobar/xmobarrc"
        xmonad $ docks defaults
 
--- A structure containing your configuration settings, overriding
--- fields in the default config. Any you don't override, will
--- use the defaults defined in xmonad/XMonad/Config.hs
---
--- No need to modify this.
---
+
 defaults = def {
       -- simple stuff
         terminal           = myTerminal,
@@ -284,11 +311,9 @@ defaults = def {
         workspaces         = myWorkspaces,
         normalBorderColor  = myNormalBorderColor,
         focusedBorderColor = myFocusedBorderColor,
-
       -- key bindings
         keys               = myKeys,
         mouseBindings      = myMouseBindings,
-
       -- hooks, layouts
         layoutHook         = myLayout,
         manageHook         = myManageHook,
