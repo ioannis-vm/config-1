@@ -37,6 +37,10 @@ Qutebrowser <3
 sudo apt install -y qutebrowser
 #+END_SRC
 
+#+BEGIN_SRC bash
+xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
+#+END_SRC
+
 
 Evince
 
@@ -49,7 +53,7 @@ sudo snap install evince
 Zotero
 
 #+BEGIN_SRC bash
-wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
+Wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
 sudo apt update -y
 sudo apt install -y zotero
 #+END_SRC
@@ -89,8 +93,11 @@ Anydesk
 
 #+BEGIN_SRC bash
 wget $(wget -q -O anydesk https://anydesk.com/en/downloads/linux && grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*amd64.deb" anydesk | head -1 ) && rm anydesk
-sudo chmod +x anydesk_6.1.0-1_amd64.deb (or whatever version)
+
+sudo chmod +x anydesk_6.1.0-1_amd64.deb # (or whatever version)
 sudo apt install ./anydesk_6.1.0-1_amd64.deb
+
+systemctl disable anydesk.service
 #+END_SRC
 
 Audio, video

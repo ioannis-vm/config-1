@@ -70,13 +70,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
 
     -- launch browser
-    , ((modm,               xK_b     ), spawn myBrowser)
+    , ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
 
     -- launch file manager
-    , ((modm,               xK_e     ), spawn myGuiFM)
+    , ((modm .|. shiftMask, xK_e     ), spawn myGuiFM)
     
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
@@ -106,10 +106,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0,  xK_Print), spawn myPrintScreen)
     
     -- Move focus to the next window
-    , ((modm,               xK_j     ), windows W.focusDown)
+    , ((modm,               xK_k     ), windows W.focusDown)
 
     -- Move focus to the previous window
-    , ((modm,               xK_k     ), windows W.focusUp  )
+    , ((modm,               xK_j     ), windows W.focusUp  )
 
     -- Move focus to the master window
     , ((modm,               xK_m     ), windows W.focusMaster  )
@@ -276,6 +276,7 @@ myLogHook = return ()
 myStartupHook = do
                 spawnOnce "compton &"
 		spawnOnce "nitrogen --restore &"
+                spawnOnce "setxkbmap us &"
 
 
 
