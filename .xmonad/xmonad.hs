@@ -277,6 +277,7 @@ myStartupHook = do
                 spawnOnce "compton &"
 		spawnOnce "nitrogen --restore &"
                 spawnOnce "setxkbmap us &"
+                spawnOnce "redshift -l 42.652:-73.756 &"
 
 
 
