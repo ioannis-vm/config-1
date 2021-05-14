@@ -66,8 +66,8 @@
 ;; +Transparency
 ;; ===================================
 
-(set-frame-parameter (selected-frame) 'alpha '(80 . 50))
-(add-to-list 'default-frame-alist '(alpha . (80 . 50)))
+(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
+(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
 
 (defun toggle-transparency ()
   (interactive)
