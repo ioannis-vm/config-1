@@ -133,4 +133,5 @@ unset __conda_setup
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 
-# neofetch is slow on my old laptop!
+export EDITOR='emacs -nw'
+export VISUAL='emacs'
