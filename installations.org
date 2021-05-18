@@ -56,6 +56,11 @@ sudo apt remove -y evince --autoremove
 sudo snap install evince
 #+END_SRC
 
+Baobab
+
+#+BEGIN_SRC bash
+sudo apt install -y baobab
+#+END_SRC
 
 Zotero
 
