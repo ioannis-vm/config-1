@@ -1,10 +1,16 @@
 * Installations
 ** Command Reference
 
+Basics
+
 #+BEGIN_SRC bash
-sudo apt autoremove
-sudo apt update
-sudo apt upgrade
+sudo apt autoremove && \
+sudo apt update && \
+sudo apt upgrade && \
+sudo apt install make git
+
+sudo ufw enable
+
 #+END_SRC
 
 ** Installing software
@@ -12,7 +18,7 @@ sudo apt upgrade
 Working environment basics
 
 #+BEGIN_SRC bash
-sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift
+sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton
 #+END_SRC
 
 Working environment supplemental
@@ -28,6 +34,7 @@ sudo lux
 Emacs
 
 #+BEGIN_SRC bash
+sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt install -y emacs26
 #+END_SRC
 
@@ -53,7 +60,7 @@ sudo snap install evince
 Zotero
 
 #+BEGIN_SRC bash
-Wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
+wget -qO- https://github.com/retorquere/zotero-deb/releases/download/apt-get/install.sh | sudo bash
 sudo apt update -y
 sudo apt install -y zotero
 #+END_SRC
@@ -79,7 +86,15 @@ sudo apt install  ./rstudio-1.2.5042-amd64.deb
 Texlive-full and Texstudio
 
 #+BEGIN_SRC bash
-sudo apt-get install -y texlive-full texstudio
+sudo apt install -y texlive-full texstudio
+#+END_SRC
+
+# Duplicati
+
+[[https://www.duplicati.com/download][Download here]]
+#+BEGIN_SRC bash
+cd ~/Downloads
+sudo apt install  ./duplicati_XXX.deb
 #+END_SRC
 
 Tor
@@ -92,6 +107,7 @@ sudo apt install -y torbrowser-launcher
 Anydesk
 
 #+BEGIN_SRC bash
+cd ~/Downloads && \
 wget $(wget -q -O anydesk https://anydesk.com/en/downloads/linux && grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*amd64.deb" anydesk | head -1 ) && rm anydesk
 
 sudo chmod +x anydesk_6.1.0-1_amd64.deb # (or whatever version)
@@ -116,6 +132,9 @@ sudo apt install -y ffmpeg audacity
 *** R
 
 #+BEGIN_SRC R
+sudo apt-get update && sudo apt-get install libssl-dev
+sudo apt-get install libcurl4-openssl-dev r-base
+
 install.packages("plotly")  # an amazing plotting library
 install.packages("webshot") # knit plotly figures to pdf
 webshot::install_phantomjs()
