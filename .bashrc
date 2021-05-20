@@ -132,6 +132,7 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
 
 export EDITOR='emacs -nw'
 export VISUAL='emacs'
