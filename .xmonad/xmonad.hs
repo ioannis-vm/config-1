@@ -46,7 +46,7 @@ myTerminal       = "gnome-terminal"
 myBrowser        = "qutebrowser"
 myGuiFM          = "nautilus"
 myPrintScreen    = "gnome-screenshot"
-
+myGuiTextEditor  = "emacs"
 
 ----------------
 -- workspaces --
@@ -77,7 +77,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch file manager
     , ((modm .|. shiftMask, xK_e     ), spawn myGuiFM)
-    
+
+    -- launch GUI text editor
+    , ((modm .|. shiftMask, xK_t     ), spawn myGuiTextEditor)
+
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
     , ((0, xF86XK_MonBrightnessDown), spawn "lux -s 10%")
@@ -278,6 +281,9 @@ myStartupHook = do
 		spawnOnce "nitrogen --restore &"
                 spawnOnce "setxkbmap us &"
                 spawnOnce "redshift -l 42.652:-73.756 &"
+                spawnOnce "duplicati &"
+                spawnOnce "/usr/bin/canberra-gtk-play --id='desktop-login' &"
+                spawnOnce "config pull &"
 
 
 
