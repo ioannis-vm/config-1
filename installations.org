@@ -134,6 +134,11 @@ Audio, video
 sudo apt install -y ffmpeg audacity
 #+END_SRC
 
+Zoom
+#+BEGIN_SRC bash
+sudo snap install zoom-client
+#+END_SRC
+
 
 ** Scientific Computing - Installing Packages
 

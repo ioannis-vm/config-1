@@ -36,6 +36,7 @@
     material-theme                  ;; A nice theme
     irony                           ;; C/C++ minor mode powered by libclang
     irony-eldoc                     ;; irony-mode support for eldoc-mode
+    flycheck                        ;; On-the-fly syntax checking
     flycheck-irony                  ;; Flycheck: C/C++ support via Irony
     company-irony                   ;; company-mode completion back-end for irony-mode
     rtags                           ;; A front-end for rtags
@@ -99,8 +100,13 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
-(add-hook 'elpy-mode-hook #'visual-line-mode)
-(add-hook 'elpy-mode-hook #'adaptive-wrap-prefix-mode)
+(add-hook 'elpy-mode-hook 'visual-line-mode)
+(add-hook 'elpy-mode-hook 'adaptive-wrap-prefix-mode)
+
+;; syntax checking
+(add-hook 'elpy-mode-hook 'flycheck-mode)
+(add-hook 'elpy-mode-hook 'flycheck-mode)
+
 
 ;; ===================================
 ;; C++
