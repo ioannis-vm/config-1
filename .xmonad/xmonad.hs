@@ -103,7 +103,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_n     ), refresh)
 
     -- change keyboard layout
-    , ((modm .|. mod1Mask,  xK_space   ), spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
+    , ((mod1Mask,  xK_space   ),      spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
 
     -- print screen
     , ((0,  xK_Print), spawn myPrintScreen)
