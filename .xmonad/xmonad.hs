@@ -76,10 +76,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
 
     -- launch file manager
-    , ((modm .|. shiftMask, xK_e     ), spawn myGuiFM)
+    , ((modm .|. shiftMask, xK_f     ), spawn myGuiFM)
 
     -- launch GUI text editor
-    , ((modm .|. shiftMask, xK_t     ), spawn myGuiTextEditor)
+    , ((modm .|. shiftMask, xK_e     ), spawn myGuiTextEditor)
 
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
