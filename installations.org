@@ -30,7 +30,6 @@ sudo make install && \
 sudo lux
 #+END_SRC
 
-
 Emacs
 
 #+BEGIN_SRC bash
@@ -38,28 +37,21 @@ sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt install -y emacs26
 #+END_SRC
 
-Qutebrowser <3
+Other software straight from apt
 
 #+BEGIN_SRC bash
-sudo apt install -y qutebrowser
+sudo apt install -y qutebrowser thunderbird baobab ffmpeg audacity
 #+END_SRC
 
 #+BEGIN_SRC bash
 xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 #+END_SRC
 
-
 Evince
 
 #+BEGIN_SRC bash
 sudo apt remove -y evince --autoremove
 sudo snap install evince
-#+END_SRC
-
-Baobab
-
-#+BEGIN_SRC bash
-sudo apt install -y baobab
 #+END_SRC
 
 Zotero
@@ -113,7 +105,6 @@ Libre office
 #+BEGIN_SRC bash
 sudo add-apt-repository ppa:libreoffice
 sudo apt install -y libreoffice
-
 #+END_SRC
 
 Anydesk
@@ -128,13 +119,8 @@ sudo apt install ./anydesk_6.1.0-1_amd64.deb
 systemctl disable anydesk.service
 #+END_SRC
 
-Audio, video
-
-#+BEGIN_SRC bash
-sudo apt install -y ffmpeg audacity
-#+END_SRC
-
 Zoom
+
 #+BEGIN_SRC bash
 sudo snap install zoom-client
 #+END_SRC
