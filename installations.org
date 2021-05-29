@@ -146,5 +146,9 @@ webshot::install_phantomjs()
 ** Drivers
 
 Network card driver installation guide
-https://gist.github.com/smac89/6101a814e44562e0420712731f386438
+https://github.com/ElectricRCAircraftGuy/BrosTrendWifiAdapterSoftware
 
+#+BEGIN_SRC bash
+sudo sh -c 'busybox wget deb.trendtechcn.com/install -O /tmp/install && sh /tmp/install'
+sudo lshw -class network -short
+#+END_SRC
