@@ -88,6 +88,8 @@
 ;; ===================================
 
 (put 'dired-find-alternate-file 'disabled nil)
+;; move files quickly from split view by pressing C
+(setq dired-dwim-target t)
 
 ;; ===================================
 ;; Python
