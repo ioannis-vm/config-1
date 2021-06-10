@@ -138,3 +138,4 @@ alias gd_pull_sync='/home/john_vm/.xmonad/gd_pull_sync.sh'
 
 export EDITOR='emacs -nw'
 export VISUAL='emacs'
+alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
