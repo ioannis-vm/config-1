@@ -282,7 +282,6 @@ myStartupHook = do
                 spawnOnce "setxkbmap us &"
                 spawnOnce "redshift -l 42.652:-73.756 &"
                 spawnOnce "duplicati &"
-                spawnOnce "/usr/bin/canberra-gtk-play --id='desktop-login' &"
 
 
 
