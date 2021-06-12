@@ -42,6 +42,7 @@
     rtags                           ;; A front-end for rtags
     company-rtags
     haskell-mode                    ;; Work with haskell files
+    rainbow-mode		    ;; Colorize color names in buffers
     )
   )
 
@@ -60,7 +61,6 @@
 (tool-bar-mode -1)                  ;; Hide toolbar
 (menu-bar-mode -1)                  ;; Hide menu bar
 (scroll-bar-mode -1)                ;; Hide scrollbar
-(global-linum-mode t)               ;; Enable line numbers globally
 (show-paren-mode 1)                 ;; Show parenthesis matching
 
 ;; ===================================
@@ -109,6 +109,12 @@
 (add-hook 'elpy-mode-hook 'flycheck-mode)
 (add-hook 'elpy-mode-hook 'flycheck-mode)
 
+;; display line numbers
+(add-hook 'elpy-mode-hook 'linum-mode)
+
+;; display color tags with their color
+(add-hook 'elpy-mode-hook 'rainbow-mode)
+
 
 ;; ===================================
 ;; C++
@@ -155,6 +161,10 @@
 (add-hook 'c++-mode-hook 'flycheck-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
 
+;; line numbers
+(add-hook 'c++-mode-hook 'linum-mode)
+(add-hook 'c-mode-hook 'linum-mode)
+
 ;; ===================================
 ;; Org mode
 ;; ===================================
@@ -168,7 +178,22 @@
 ;; ===================================
 
 (add-to-list 'auto-mode-alist '("\\.rmd\\'" . markdown-mode))
-(add-hook 'markdown-mode-hook #'visual-line-mode)
-(add-hook 'markdown-mode-hook #'adaptive-wrap-prefix-mode)
+(add-hook 'markdown-mode-hook 'visual-line-mode)
+(add-hook 'markdown-mode-hook 'adaptive-wrap-prefix-mode)
+(add-hook 'markdown-mode-hook 'linum-mode)
 
 ;; User-Defined init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (rainbow-mode py-autopep8 material-theme markdown-mode magit irony-eldoc haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
