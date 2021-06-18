@@ -15,5 +15,6 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://google.com/search?q={}
+      opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
   url.start_pages:
     global: https://www.google.com
