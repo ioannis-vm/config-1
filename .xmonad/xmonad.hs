@@ -88,6 +88,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- volume control
     , ((0, 0x1008ff11), spawn "amixer -q sset Master 2%-")
     , ((0, 0x1008ff12), spawn "amixer -q sset Master toggle")
+    , ((0, 0x1008ff12), spawn "amixer -q sset Master toggle && amixer -q sset Headphone toggle")
     , ((0, 0x1008ff13), spawn "amixer -q sset Master 2%+")
 
     -- close focused window
@@ -140,9 +141,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
-
-    -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
