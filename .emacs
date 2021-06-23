@@ -115,6 +115,10 @@
 ;; display color tags with their color
 (add-hook 'elpy-mode-hook 'rainbow-mode)
 
+;; always scroll to the bottom of the python shell buffer
+(add-hook 'inferior-python-mode-hook
+          (lambda ()
+            (setq comint-move-point-for-output t)))
 
 ;; ===================================
 ;; C++
