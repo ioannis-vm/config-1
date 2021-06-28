@@ -214,10 +214,12 @@ myFocusedBorderColor = "#268bd2"
 -- Layouts --
 -------------
 
-myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| Full)
+myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| tiled_h ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
+
+     tiled_h = Mirror $ Tall nmaster delta ratio
 
      -- The default number of windows in the master pane
      nmaster = 1
@@ -226,7 +228,7 @@ myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| Full)
      ratio   = 1/2
 
      -- Percent of screen to increment by when resizing panes
-     delta   = 3/100
+     delta   = 2/100
 
 
 
