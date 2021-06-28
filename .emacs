@@ -29,6 +29,7 @@
   '(elpy                            ;; Emacs Lisp Python Environment
     py-autopep8                     ;; Run autopep8 on save
     blacken                         ;; Black formatting on save
+    projectile                      ;; Manage and navigate projects
     magit                           ;; Git integration
     auctex                          ;; Integrated environment for *TeX*
     markdown-mode                   ;; markdown mode
@@ -120,6 +121,10 @@
           (lambda ()
             (setq comint-move-point-for-output t)))
 
+;; enable code folding
+(add-hook 'elpy-mode-hook 'hs-minor-mode)
+
+
 ;; ===================================
 ;; C++
 ;; ===================================
@@ -194,7 +199,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (rainbow-mode py-autopep8 material-theme markdown-mode magit irony-eldoc haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap))))
+    (hideshow-org projectile rainbow-mode py-autopep8 material-theme markdown-mode magit irony-eldoc haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
