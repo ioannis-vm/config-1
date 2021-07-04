@@ -16,6 +16,7 @@ settings:
     global:
       DEFAULT: https://google.com/search?q={}
       news: https://news.google.com/search?q={}
+      nyt: https://www.nytimes.com/search?query={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
       sch: https://scholar.google.com/scholar?q={}
   url.start_pages:
