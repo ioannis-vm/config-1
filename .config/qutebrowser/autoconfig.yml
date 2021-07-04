@@ -10,6 +10,10 @@ settings:
     global: 100
   content.javascript.enabled:
     global: true
+  editor.command:
+    global:
+    - emacs
+    - '{file}'
   url.default_page:
     global: https://www.google.com/
   url.searchengines:
