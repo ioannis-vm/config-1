@@ -15,6 +15,7 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://google.com/search?q={}
+      news: https://news.google.com/search?q={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
       sch: https://scholar.google.com/scholar?q={}
   url.start_pages:
