@@ -19,6 +19,8 @@ settings:
   url.searchengines:
     global:
       DEFAULT: https://google.com/search?q={}
+      engr: https://www.wordreference.com/engr/{}
+      gren: https://www.wordreference.com/gren/{}
       news: https://news.google.com/search?q={}
       nyt: https://www.nytimes.com/search?query={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
