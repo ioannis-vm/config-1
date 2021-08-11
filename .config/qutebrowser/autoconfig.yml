@@ -10,6 +10,9 @@ settings:
     global: 100
   content.javascript.enabled:
     global: true
+  content.register_protocol_handler:
+    https://calendar.google.com?cid=%25s: true
+    https://mail.google.com?extsrc=mailto&url=%25s: true
   editor.command:
     global:
     - emacs
@@ -20,6 +23,8 @@ settings:
     global:
       DEFAULT: https://google.com/search?q={}
       aisc: https://www.asce.org/templates/2-column-pb.aspx?pageid=5315&mssearch={}
+      b: https://search.brave.com/search?q={}
+      wikipedia: https://en.wikipedia.org/wiki/{}
       engr: https://www.wordreference.com/engr/{}
       fema: https://search.usa.gov/search?utf8=%E2%9C%93&affiliate=fema&query={}&commit=Search
       gren: https://www.wordreference.com/gren/{}
@@ -28,6 +33,5 @@ settings:
       nyt: https://www.nytimes.com/search?query={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
       sch: https://scholar.google.com/scholar?q={}
-      b: https://search.brave.com/search?q={}
   url.start_pages:
     global: about:blank
