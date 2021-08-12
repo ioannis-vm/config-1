@@ -18,7 +18,7 @@ sudo ufw enable
 Working environment basics
 
 #+BEGIN_SRC bash
-sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton
+sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton trash-cli
 #+END_SRC
 
 Working environment supplemental
@@ -40,7 +40,7 @@ sudo apt install -y emacs26
 Other software straight from apt
 
 #+BEGIN_SRC bash
-sudo apt install -y qutebrowser thunderbird baobab ffmpeg audacity
+sudo apt install -y qutebrowser thunderbird baobab ffmpeg audacity pdfarranger
 #+END_SRC
 
 #+BEGIN_SRC bash
