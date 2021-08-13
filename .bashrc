@@ -131,10 +131,7 @@ unset __conda_setup
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
-alias gd_push='/home/john_vm/.xmonad/gd_push.sh'
-alias gd_pull='/home/john_vm/.xmonad/gd_pull.sh'
-alias gd_push_encr='/home/john_vm/.xmonad/gd_push_encr.sh'
-alias gd_pull_encr='/home/john_vm/.xmonad/gd_pull_encr.sh'
+alias gd='. /home/john_vm/.xmonad/gd.sh'
 
 export EDITOR='emacs -nw'
 export VISUAL='emacs'
