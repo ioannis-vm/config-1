@@ -33,5 +33,6 @@ settings:
       nyt: https://www.nytimes.com/search?query={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
       sch: https://scholar.google.com/scholar?q={}
+      healthline: https://www.healthline.com/search?q1={}
   url.start_pages:
     global: about:blank
