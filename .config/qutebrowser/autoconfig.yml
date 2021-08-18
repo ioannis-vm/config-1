@@ -24,7 +24,7 @@ settings:
       DEFAULT: https://google.com/search?q={}
       aisc: https://www.asce.org/templates/2-column-pb.aspx?pageid=5315&mssearch={}
       b: https://search.brave.com/search?q={}
-      wikipedia: https://en.wikipedia.org/wiki/{}
+      wikipedia: https://en.wikipedia.org/w/index.php?title=Special:Search&search={}&fulltext=1&profile=default&ns0=1
       engr: https://www.wordreference.com/engr/{}
       fema: https://search.usa.gov/search?utf8=%E2%9C%93&affiliate=fema&query={}&commit=Search
       gren: https://www.wordreference.com/gren/{}
