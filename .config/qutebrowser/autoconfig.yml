@@ -35,5 +35,6 @@ settings:
       sch: https://scholar.google.com/scholar?q={}
       healthline: https://www.healthline.com/search?q1={}
       define: https://www.definitions.net/definition/{}
+      onelook: https://www.onelook.com/thesaurus/?s={}
   url.start_pages:
     global: about:blank
