@@ -26,13 +26,14 @@ settings:
       b: https://search.brave.com/search?q={}
       wikipedia: https://en.wikipedia.org/w/index.php?title=Special:Search&search={}&fulltext=1&profile=default&ns0=1
       engr: https://www.wordreference.com/engr/{}
-      fema: https://search.usa.gov/search?utf8=%E2%9C%93&affiliate=fema&query={}&commit=Search
       gren: https://www.wordreference.com/gren/{}
+      fema: https://search.usa.gov/search?utf8=%E2%9C%93&affiliate=fema&query={}&commit=Search
       news: https://news.google.com/search?q={}
       nist: https://www.nist.gov/fusion-search?s={}
       nyt: https://www.nytimes.com/search?query={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
       sch: https://scholar.google.com/scholar?q={}
       healthline: https://www.healthline.com/search?q1={}
+      define: https://www.definitions.net/definition/{}
   url.start_pages:
     global: about:blank
