@@ -36,5 +36,6 @@ settings:
       healthline: https://www.healthline.com/search?q1={}
       define: https://www.definitions.net/definition/{}
       onelook: https://www.onelook.com/thesaurus/?s={}
+      wm: https://reference.wolfram.com/search/?q={}
   url.start_pages:
     global: about:blank
