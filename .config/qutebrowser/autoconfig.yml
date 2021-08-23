@@ -37,5 +37,6 @@ settings:
       define: https://www.definitions.net/definition/{}
       onelook: https://www.onelook.com/thesaurus/?s={}
       wm: https://reference.wolfram.com/search/?q={}
+      dbw: https://www.designingbuildings.co.uk/w/index.php?title=Special%3ASearch&search={}
   url.start_pages:
     global: about:blank
