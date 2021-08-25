@@ -44,5 +44,3 @@ Steps 1-3, backup existing local dotfiles if needed, and then
 config remote add origin https://<TOKEN>@github.com/ioannis-vm/config-1.git
 config pull origin main
 ```
-
-### GitHub password authentication deprecation
