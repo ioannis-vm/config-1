@@ -38,5 +38,6 @@ settings:
       onelook: https://www.onelook.com/thesaurus/?s={}
       wm: https://reference.wolfram.com/search/?q={}
       dbw: https://www.designingbuildings.co.uk/w/index.php?title=Special%3ASearch&search={}
+      blib: https://search.library.berkeley.edu/discovery/search?vid=01UCS_BER:UCB&tab=Default_UCLibrarySearch&search_scope=DN_and_CI&offset=0&query=any,contains,{}
   url.start_pages:
     global: about:blank
