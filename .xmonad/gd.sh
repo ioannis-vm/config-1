@@ -3,7 +3,7 @@
 # Check number of arguments
 if [ "$#" -ne 1 ]; then
     echo "Error: Invalid number of arguments"
-    echo "Use \"gd pull\" or \"gd push\""
+    echo "Use \"gd pull\", \"gd push\", \"gd pull_copy\" or \"gd push_copy\""
     return
 fi
 
@@ -31,12 +31,16 @@ else
     return
 fi
 
-# Determine function (pull or push)
+# Determine function (pull, push, pull_copy or push_copy)
 if [ $1 == "pull" ]; then
     rclone sync "$remote" "$local" --progress --update
 elif [ $1 == "push" ]; then
     rclone sync "$local" "$remote" --progress --update
+elif [ $1 == "pull_copy" ]; then
+    rclone copy "$remote" "$local" --progress --update
+elif [ $1 == "push_copy" ]; then
+    rclone copy "$local" "$remote" --progress --update
 else
     echo "Invalid function: $1"
-    echo "Use \"gd pull\" or \"gd push\""
+    echo "Use \"gd pull\", \"gd push\", \"gd pull_copy\" or \"gd push_copy\""
 fi
