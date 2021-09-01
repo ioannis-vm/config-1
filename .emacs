@@ -100,8 +100,9 @@
 (setq elpy-rpc-virtualenv-path 'current)
 (load "~/.emacs_workon_home")
 
-(require 'py-autopep8)
-(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+;;(require 'py-autopep8)
+;;(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+;; this has been causing some issues..
 
 (add-hook 'elpy-mode-hook 'visual-line-mode)
 (add-hook 'elpy-mode-hook 'adaptive-wrap-prefix-mode)
