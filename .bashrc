@@ -136,8 +136,3 @@ alias gd='. /home/john_vm/.xmonad/gd.sh'
 export EDITOR='emacs -nw'
 export VISUAL='emacs'
 alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
-<<<<<<< HEAD
-alias lock='xdg-screensaver lock'
-=======
-
->>>>>>> 5da444831f6219882f5f147e97de647e8aac6592
