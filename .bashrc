@@ -92,6 +92,10 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
+export EDITOR='emacs -nw'
+export VISUAL='emacs'
+
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -104,6 +108,13 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
+alias gd='. /home/john_vm/.xmonad/gd.sh'
+alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
+alias dcal='date&&cal'
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -128,12 +139,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
-alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
-alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
-alias gd='. /home/john_vm/.xmonad/gd.sh'
-
-export EDITOR='emacs -nw'
-export VISUAL='emacs'
-alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
-alias dcal='date&&cal'
