@@ -44,6 +44,7 @@
     company-rtags
     haskell-mode                    ;; Work with haskell files
     rainbow-mode		    ;; Colorize color names in buffers
+    nov                             ;; epub reader. Oh, yeah!
     )
   )
 
@@ -199,3 +200,16 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'adaptive-wrap-prefix-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
+
+;; ===================================
+;; Epub
+;; ===================================
+
+;; https://depp.brause.cc/nov.el/
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+(setq nov-text-width 80)
+(defun my-nov-font-setup ()
+  (face-remap-add-relative 'variable-pitch :family "Liberation Serif"
+			   :height 1.3)
+  (setq line-spacing 0.3))
+(add-hook 'nov-mode-hook 'my-nov-font-setup)
