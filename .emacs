@@ -45,6 +45,7 @@
     haskell-mode                    ;; Work with haskell files
     rainbow-mode		    ;; Colorize color names in buffers
     nov                             ;; epub reader. Oh, yeah!
+    no-littering                    ;; Place backup files elsewhere
     )
   )
 
@@ -213,3 +214,17 @@
 			   :height 1.3)
   (setq line-spacing 0.3))
 (add-hook 'nov-mode-hook 'my-nov-font-setup)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (no-littering nov rainbow-mode py-autopep8 projectile material-theme markdown-mode magit kv irony-eldoc haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
