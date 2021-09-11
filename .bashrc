@@ -114,7 +114,7 @@ alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
 alias gd='. /home/john_vm/.xmonad/gd.sh'
 alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
 alias dcal='date&&cal'
-
+alias todo='$HOME/.xmonad/todo'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
