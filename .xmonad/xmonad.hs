@@ -81,6 +81,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch GUI text editor
     , ((modm .|. shiftMask, xK_e     ), spawn myGuiTextEditor)
 
+    -- launch dmenu todo list
+    , ((modm .|. shiftMask, xK_t     ), spawn "$HOME/.xmonad/todo")
+
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
     , ((0, xF86XK_MonBrightnessDown), spawn "lux -s 10%")
@@ -291,7 +294,7 @@ myStartupHook = do
 
 
 main = do
-       spawnPipe "xmobar -x 0 /home/john_vm/.config/xmobar/xmobarrc"
+       spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
        xmonad $ docks defaults
 
 
