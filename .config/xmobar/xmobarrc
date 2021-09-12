@@ -80,7 +80,7 @@ Config {
         , Run Weather "KOAK" [ "--template", "<skyCondition> | <tempC>°C",
                                "-L","18","-H","27","--normal","lightblue","--high","darkorange","--low","cyan"] 9000
         -- AQI
-        , Run Com "python3" ["/home/john_vm/.config/xmobar/aqi.py"] "aqi" 9000
+        , Run ComX "python3" ["/home/john_vm/.config/xmobar/aqi.py"] "" "aqi" 9000
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
         , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
