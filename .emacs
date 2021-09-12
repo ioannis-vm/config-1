@@ -59,7 +59,22 @@
 ;; ===================================
 ;; Basic Look
 ;; ===================================
-(load-theme 'material t)            ;; Load material theme
+
+;; theme
+(load-theme 'material t)
+;; transparency
+(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
+(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
+
+(add-hook 'after-make-frame-functions
+            (lambda (frame)
+              (with-selected-frame frame
+		;; theme
+                (load-theme 'material t)
+		;; transparency
+		(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
+		(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
+		)))
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (tool-bar-mode -1)                  ;; Hide toolbar
 (menu-bar-mode -1)                  ;; Hide menu bar
@@ -70,8 +85,6 @@
 ;; +Transparency
 ;; ===================================
 
-(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
-(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
 
 (defun toggle-transparency ()
   (interactive)

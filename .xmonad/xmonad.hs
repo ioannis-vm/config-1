@@ -46,7 +46,7 @@ myTerminal       = "gnome-terminal"
 myBrowser        = "qutebrowser"
 myGuiFM          = "nautilus"
 myPrintScreen    = "gnome-screenshot"
-myGuiTextEditor  = "emacs"
+myGuiTextEditor  = "emacsclient -c"
 
 ----------------
 -- workspaces --
@@ -285,6 +285,8 @@ myStartupHook = do
                 spawnOnce "setxkbmap us &"
                 spawnOnce "redshift -l 42.652:-73.756 &"
                 spawnOnce "duplicati &"
+                spawnOnce "emacs --daemon &"
+                spawnOnce "qutebrowser --nowindow &"
 
 
 
