@@ -44,7 +44,7 @@ import XMonad.Hooks.ManageDocks
 
 myTerminal       = "gnome-terminal"
 myBrowser        = "qutebrowser"
-myGuiFM          = "nautilus"
+myGuiFM          = "pcmanfm"
 myPrintScreen    = "$HOME/.xmonad/select_screenshot"
 myGuiTextEditor  = "emacsclient -c"
 
