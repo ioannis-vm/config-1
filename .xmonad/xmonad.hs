@@ -45,7 +45,7 @@ import XMonad.Hooks.ManageDocks
 myTerminal       = "gnome-terminal"
 myBrowser        = "qutebrowser"
 myGuiFM          = "nautilus"
-myPrintScreen    = "gnome-screenshot"
+myPrintScreen    = "$HOME/.xmonad/select_screenshot"
 myGuiTextEditor  = "emacsclient -c"
 
 ----------------
@@ -109,7 +109,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- change keyboard layout
     , ((mod1Mask,  xK_space   ),      spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
 
-    -- print screen
+    -- print screen (full screenshot)
     , ((0,  xK_Print), spawn myPrintScreen)
     
     -- Move focus to the next window
@@ -252,8 +252,7 @@ myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| tiled_h ||| Full)
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Gimp"        --> doFloat
-    , className =? "Calculator"     --> doFloat
+    [ className =? "Calculator"     --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 

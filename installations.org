@@ -18,7 +18,7 @@ sudo ufw enable
 Working environment basics
 
 #+BEGIN_SRC bash
-sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton trash-cli
+sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton trash-cli scrot
 #+END_SRC
 
 Working environment supplemental
