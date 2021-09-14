@@ -5,7 +5,7 @@ Config {
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Top
-   , border =       BottomB
+   , border =       NoBorder
    , borderColor =  "#646464"
 
    -- layout
