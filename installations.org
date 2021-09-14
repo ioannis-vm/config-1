@@ -37,6 +37,12 @@ sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt install -y emacs26
 #+END_SRC
 
+Alacritty
+#+BEGIN_SRC bash
+sudo add-apt-repository ppa:aslatter/ppa
+sudo apt install alacritty
+#+END_SRC
+
 Other software straight from apt
 
 #+BEGIN_SRC bash

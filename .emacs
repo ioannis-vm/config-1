@@ -234,7 +234,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (no-littering nov rainbow-mode py-autopep8 projectile material-theme markdown-mode magit kv irony-eldoc haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap))))
+    (pdf-tools no-littering nov rainbow-mode py-autopep8 projectile material-theme markdown-mode magit kv irony-eldoc haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
