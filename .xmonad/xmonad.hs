@@ -42,7 +42,7 @@ import XMonad.Hooks.ManageDocks
 -- my applications --
 ---------------------
 
-myTerminal       = "gnome-terminal"
+myTerminal       = "alacritty"
 myBrowser        = "qutebrowser"
 myGuiFM          = "pcmanfm"
 myPrintScreen    = "$HOME/.xmonad/select_screenshot"
