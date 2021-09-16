@@ -90,8 +90,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- volume control
     , ((0, 0x1008ff11), spawn "amixer -q sset Master 2%-")
-    , ((0, 0x1008ff12), spawn "amixer -q sset Master toggle")
-    , ((0, 0x1008ff12), spawn "amixer -q sset Master toggle && amixer -q sset Headphone toggle")
+    , ((0, 0x1008ff12), spawn "pactl set-sink-mute 1 toggle")
     , ((0, 0x1008ff13), spawn "amixer -q sset Master 2%+")
 
     -- close focused window
