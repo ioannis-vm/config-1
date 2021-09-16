@@ -76,6 +76,7 @@
 		(set-frame-parameter (selected-frame) 'alpha '(90 . 90))
 		(add-to-list 'default-frame-alist '(alpha . (90 . 90)))
 		)))
+(setq inhibit-startup-message t)    ;; Hide the startup message
 (tool-bar-mode -1)                  ;; Hide toolbar
 (menu-bar-mode -1)                  ;; Hide menu bar
 (scroll-bar-mode -1)                ;; Hide scrollbar
