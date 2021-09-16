@@ -75,7 +75,7 @@ sudo apt-get install -y libgl1-mesa-glx libegl1-mesa libxrandr2 libxrandr2 libxs
 #+END_SRC
 (download installer from their website)
 #+BEGIN_SRC bash
-sudo bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh # last time I did it
+bash ~/Downloads/Anaconda3-2020.02-Linux-x86_64.sh # last time I did it
 #+END_SRC
 
 R and RStudio
@@ -117,7 +117,7 @@ Anydesk
 
 #+BEGIN_SRC bash
 cd ~/Downloads && \
-wget $(wget -q -O anydesk https://anydesk.com/en/downloads/linux && grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*amd64.deb" anydesk | head -1 ) && rm anydesk
+wget $(wget -q -O anydesk https://anydesk.com/en/downloads/linux && grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*amd64.deb" anydesk | head -1 )
 
 sudo chmod +x anydesk_6.1.0-1_amd64.deb # (or whatever version)
 sudo apt install ./anydesk_6.1.0-1_amd64.deb
