@@ -93,6 +93,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, 0x1008ff12), spawn "pactl set-sink-mute 1 toggle")
     , ((0, 0x1008ff13), spawn "amixer -q sset Master 2%+")
 
+    -- media player control
+    , ((0, xF86XK_AudioPrev ), safeSpawn "dbus-send" ["--print-reply"," --dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Previous"] )
+    , ((0, xF86XK_AudioNext ), safeSpawn "dbus-send" ["--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.Next"] )
+    , ((0, xF86XK_AudioPlay ), safeSpawn "dbus-send" ["--print-reply", "--dest=org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2", "org.mpris.MediaPlayer2.Player.PlayPause"] )
+
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
 
