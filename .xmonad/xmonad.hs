@@ -292,7 +292,7 @@ myStartupHook = do
                 spawnOnce "redshift -l 42.652:-73.756 &"
                 spawnOnce "duplicati &"
                 spawnOnce "emacs --daemon &"
-                spawnOnce "qutebrowser --nowindow &"
+                spawnOnce "unclutter &"
 
 
 
