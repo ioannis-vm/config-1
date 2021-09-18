@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# Write/remove a task to do later.
+#
+# Select an existing entry to remove it from the file, or type a new entry to
+# add it.
+#
+
+file="$HOME/.xmonad/.dmenu_bookmarks.txt"
+touch "$file"
+height=$(wc -l "$file" | awk '{print $1}')
+
+prompt="Select a bookmark: "
+
+cmd=$(dmenu -l "$height" -p "$prompt" "$@" < "$file")
+
+$cmd
+
+exit 0

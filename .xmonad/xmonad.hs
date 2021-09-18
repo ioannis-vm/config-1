@@ -72,6 +72,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu
     , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
 
+    -- launch dmenu shortcuts
+    , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/.xmonad/dmenu_shortcuts")
+
     -- launch browser
     , ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
 
