@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Write/remove a task to do later.
 #

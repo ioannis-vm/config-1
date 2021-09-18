@@ -1,19 +1,43 @@
-#!/bin/sh
+#!/bin/bash
 #
-# Write/remove a task to do later.
+# Bookmarked bash commands
 #
-# Select an existing entry to remove it from the file, or type a new entry to
-# add it.
+# Select a command to run it
 #
 
+#
+# Define functions
+#
+
+containsElement () {
+  local e match="$1"
+  shift
+  for e; do [[ "$e" == "$match" ]] && return 0; done
+  return 1
+}
+
+#
+# Main script
+#
+
+# bookmark file path
 file="$HOME/.xmonad/.dmenu_bookmarks.txt"
-touch "$file"
+
+# get the number of lines in the file
 height=$(wc -l "$file" | awk '{print $1}')
+
+# read the contents of the file in a bash array
+readarray -t options < "$file"
 
 prompt="Select a bookmark: "
 
-cmd=$(dmenu -l "$height" -p "$prompt" "$@" < "$file")
+choice=$(printf '%s\n' "${options[@]}" | dmenu -l "$height" -p "$prompt")
 
-$cmd
+echo $choice
 
-exit 0
+if $(containsElement "$choice" "${options[@]}") ; then
+    command=$(echo "${choice}" | awk -F ' : ' '{print $NF}')
+    $command
+else
+    printf '%s\n' "Option does not exist"
+fi
