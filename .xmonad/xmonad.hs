@@ -260,6 +260,7 @@ myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| tiled_h ||| Full)
 --
 myManageHook = composeAll
     [ className =? "Calculator"     --> doFloat
+    , className =? "vlc"            --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
