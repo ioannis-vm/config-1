@@ -222,7 +222,7 @@
 
 ;; https://depp.brause.cc/nov.el/
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-(setq nov-text-width 800)
+(setq nov-text-width 80)
 (defun my-nov-font-setup ()
   (face-remap-add-relative 'variable-pitch :family "Liberation Serif"
 			   :height 1.3)
