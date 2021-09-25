@@ -47,6 +47,7 @@
     nov                             ;; epub reader. Oh, yeah!
     no-littering                    ;; Place backup files elsewhere
     yaml-mode                       ;; Syntax highlighting for yaml files
+    json-mode                       ;; Major mode for editing JSON files
     )
   )
 
