@@ -39,5 +39,6 @@ settings:
       wm: https://reference.wolfram.com/search/?q={}
       wa: https://www.wolframalpha.com/input/?i={}
       dbw: https://www.designingbuildings.co.uk/w/index.php?title=Special%3ASearch&search={}
+      ytb: https://www.youtube.com/results?search_query={}
   url.start_pages:
-    global: startpage.com
+    global: about:blank

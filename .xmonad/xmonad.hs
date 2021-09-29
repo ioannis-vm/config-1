@@ -263,6 +263,7 @@ myManageHook = composeAll
     , className =? "vlc"            --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "Matplotlib"     --> doFloat
+    , className =? "zoom"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
