@@ -73,7 +73,7 @@ Config {
                                        -- AC "on" status
                                        , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
                                        -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
+                                       , "-i"	, "<fc=#006000>AC</fc>"
                              ] 50
 
         -- Weather
