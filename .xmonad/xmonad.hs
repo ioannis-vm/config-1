@@ -263,6 +263,7 @@ myManageHook = composeAll
     , className =? "vlc"            --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "Matplotlib"     --> doFloat
+    , className =? "matplotlib"     --> doFloat
     , className =? "zoom"           --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
@@ -296,7 +297,6 @@ myStartupHook = do
                 spawnOnce "redshift &"
                 spawnOnce "duplicati &"
                 spawnOnce "emacs --daemon &"
-                spawnOnce "unclutter &"
 
 
 
