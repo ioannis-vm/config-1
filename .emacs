@@ -48,6 +48,7 @@
     no-littering                    ;; Place backup files elsewhere
     yaml-mode                       ;; Syntax highlighting for yaml files
     json-mode                       ;; Major mode for editing JSON files
+    org-ref                         ;; citations in org-mode
     )
   )
 
@@ -205,6 +206,8 @@
 ;; enable adaptive line wrapping
 (add-hook 'org-mode-hook #'visual-line-mode)
 (add-hook 'org-mode-hook #'adaptive-wrap-prefix-mode)
+(require 'org-ref)
+(setq org-ref-default-citation-link "citep")
 
 ;; ===================================
 ;; Markdown mode
