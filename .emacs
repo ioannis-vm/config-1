@@ -34,7 +34,7 @@
     auctex                          ;; Integrated environment for *TeX*
     markdown-mode                   ;; markdown mode
     adaptive-wrap                   ;; Smart line-wrapping with wrap-prefix
-    material-theme                  ;; A nice theme
+    monokai-theme                   ;; A nice theme
     irony                           ;; C/C++ minor mode powered by libclang
     irony-eldoc                     ;; irony-mode support for eldoc-mode
     flycheck                        ;; On-the-fly syntax checking
@@ -64,7 +64,7 @@
 ;; ===================================
 
 ;; theme
-(load-theme 'material t)
+(load-theme 'monokai t)
 ;; transparency
 (set-frame-parameter (selected-frame) 'alpha '(93 . 93))
 (add-to-list 'default-frame-alist '(alpha . (93 . 93)))
@@ -73,7 +73,7 @@
             (lambda (frame)
               (with-selected-frame frame
 		;; theme
-                (load-theme 'material t)
+                (load-theme 'monokai t)
 		;; transparency
 		(set-frame-parameter (selected-frame) 'alpha '(93 . 93))
 		(add-to-list 'default-frame-alist '(alpha . (93 . 93)))
@@ -245,3 +245,7 @@
 (add-hook 'yaml-mode-hook
           (lambda ()
             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
+
+;; ===================================
+;; end
+;; ===================================
