@@ -35,6 +35,8 @@ import XMonad.Util.Run
 import XMonad.Hooks.DynamicLog
 -- no overlap for windows over xmobar
 import XMonad.Hooks.ManageDocks
+-- cursor
+import XMonad.Util.Cursor
 
 ----------------------------------------------------------------
 
@@ -297,6 +299,7 @@ myStartupHook = do
                 spawnOnce "redshift &"
                 spawnOnce "duplicati &"
                 spawnOnce "emacs --daemon &"
+                setDefaultCursor xC_left_ptr
 
 
 
