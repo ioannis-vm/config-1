@@ -11,7 +11,7 @@ Config {
    -- layout
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
-   , template = "%battery% | %cpu% | %coretemp% | %memory% | %dynnetwork% }{ %KOAK% | %aqi% | %date% | %kbd% "
+   , template = "%battery% | %cpu% | %coretemp% | %memory% | %dynnetwork% }{ %weather% | %aqi% | %date% | %kbd% "
 
    -- general behavior
    , lowerOnStart =     True    -- send to bottom of window stack on start
@@ -77,10 +77,12 @@ Config {
                              ] 50
 
         -- Weather
-        , Run Weather "KOAK" [ "--template", "<skyCondition> | <tempC>°C",
-                               "-L","18","-H","27","--normal","lightblue","--high","darkorange","--low","cyan"] 9000
+        -- , Run Weather "KOAK" [ "--template", "<skyCondition> | <tempC>°C",
+        --                        "-L","18","-H","27","--normal","lightblue","--high","darkorange","--low","cyan"] 9000
+        -- Weather (custom)
+        , Run ComX "python3" ["/home/john_vm/.config/xmobar/weather.py"] "" "weather" 18000
         -- AQI
-        , Run ComX "python3" ["/home/john_vm/.config/xmobar/aqi.py"] "" "aqi" 9000
+        , Run ComX "python3" ["/home/john_vm/.config/xmobar/aqi.py"] "" "aqi" 18000
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
         , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
