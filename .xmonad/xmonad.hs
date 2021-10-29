@@ -301,6 +301,7 @@ myStartupHook = do
                 spawnOnce "redshift &"
                 spawnOnce "duplicati &"
                 spawnOnce "emacs --daemon &"
+                spawnOnce "slack -u &"
                 setDefaultCursor xC_left_ptr
                 setWMName "LG3D"
 
