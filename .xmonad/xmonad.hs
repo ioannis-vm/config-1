@@ -37,6 +37,8 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 -- cursor
 import XMonad.Util.Cursor
+-- window manager name
+import XMonad.Hooks.SetWMName
 
 ----------------------------------------------------------------
 
@@ -300,6 +302,7 @@ myStartupHook = do
                 spawnOnce "duplicati &"
                 spawnOnce "emacs --daemon &"
                 setDefaultCursor xC_left_ptr
+                setWMName "LG3D"
 
 
 
