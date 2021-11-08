@@ -39,8 +39,9 @@ try:
 
     output_chance = np.max(rain_chance_num) * 100
 
+    rain_flag = False
     if output_chance > 20.:
-        msg += ' <fc=#169490>rain coming</fc>'
+        rain_flag = True
 
     # heavy wind & warning
     wind_speed = table.find_all(
@@ -49,9 +50,18 @@ try:
 
     max_speed = np.max(wind_speed)
 
+    wind_flag = False
     if max_speed > 18:
-        msg += ' <fc=#169490>heavy wind coming</fc>'
+        wind_flag = True
 
+    if rain_flag and wind_flag:
+        msg += ' <fc=#169490>rain & heavy wind coming</fc>'
+    else:
+        if rain_flag:
+            msg += ' <fc=#169490>rain coming</fc>'
+        elif wind_flag:
+            msg += ' <fc=#169490>heavy wind coming</fc>'
+        
     print(msg)
 
 except:

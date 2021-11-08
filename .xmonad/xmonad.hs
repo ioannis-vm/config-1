@@ -265,10 +265,14 @@ myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| tiled_h ||| Full)
 myManageHook = composeAll
     [ className =? "Calculator"     --> doFloat
     , className =? "vlc"            --> doFloat
+    , className =? "Gimp-2.10"      --> doFloat
+    , className =? "gimp-2.10"      --> doFloat
+    , className =? "gimp"           --> doFloat
     , className =? "Gimp"           --> doFloat
     , className =? "Matplotlib"     --> doFloat
     , className =? "matplotlib"     --> doFloat
     , className =? "zoom"           --> doFloat
+    , className =? "XClock"         --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
