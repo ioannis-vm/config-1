@@ -79,6 +79,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu shortcuts
     , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/.xmonad/dmenu_shortcuts")
 
+    -- launch dmenu zotero
+    , ((modm .|. shiftMask, xK_l    ), spawn "$HOME/.xmonad/dmenu_zotero")
+
     -- launch browser
     , ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
 
@@ -271,7 +274,6 @@ myManageHook = composeAll
     , className =? "Gimp"           --> doFloat
     , className =? "Matplotlib"     --> doFloat
     , className =? "matplotlib"     --> doFloat
-    , className =? "zoom"           --> doFloat
     , className =? "XClock"         --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
