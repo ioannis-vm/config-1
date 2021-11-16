@@ -266,17 +266,18 @@ myLayout = avoidStruts $ mySpacing $ smartBorders (tiled ||| tiled_h ||| Full)
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Calculator"     --> doFloat
-    , className =? "vlc"            --> doFloat
-    , className =? "Gimp-2.10"      --> doFloat
-    , className =? "gimp-2.10"      --> doFloat
-    , className =? "gimp"           --> doFloat
-    , className =? "Gimp"           --> doFloat
-    , className =? "Matplotlib"     --> doFloat
-    , className =? "matplotlib"     --> doFloat
-    , className =? "XClock"         --> doFloat
-    , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    [ className =? "Gnome-calculator" --> doFloat
+    , className =? "vlc"              --> doFloat
+    , className =? "Gimp-2.10"        --> doFloat
+    , className =? "gimp-2.10"        --> doFloat
+    , className =? "gimp"             --> doFloat
+    , className =? "Gimp"             --> doFloat
+    , className =? "Matplotlib"       --> doFloat
+    , className =? "matplotlib"       --> doFloat
+    , className =? "XClock"           --> doFloat
+    , className =? "zoom"             --> doFloat
+    , resource  =? "desktop_window"   --> doIgnore
+    , resource  =? "kdesktop"         --> doIgnore ]
 
 
 --------------------
@@ -306,7 +307,7 @@ myStartupHook = do
                 spawnOnce "setxkbmap us &"
                 spawnOnce "redshift &"
                 spawnOnce "duplicati &"
-                spawnOnce "emacs --daemon &"
+                spawnOnce "emacs -bg black --daemon &"
                 spawnOnce "slack -u &"
                 setDefaultCursor xC_left_ptr
                 setWMName "LG3D"
