@@ -18,7 +18,7 @@ sudo ufw enable
 Working environment basics
 
 #+BEGIN_SRC bash
-sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton trash-cli scrot pcmanfm notify-osd lxappearance
+sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton trash-cli scrot pcmanfm notify-osd lxappearance locate
 #+END_SRC
 
 Working environment supplemental
@@ -35,6 +35,7 @@ Emacs
 #+BEGIN_SRC bash
 sudo add-apt-repository ppa:kelleyk/emacs
 sudo apt install -y emacs26
+sudo apt install mu4e
 #+END_SRC
 
 Alacritty
@@ -161,3 +162,9 @@ sudo lshw -class network -short
 
 ** NVIDIA Cuda
 Installation and setup instructions can be found [[https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions][here]].
+
+
+Mail clienr
+#+BEGIN_SRC bash
+sudo apt install offlineimap
+#+END_SRC

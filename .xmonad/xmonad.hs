@@ -307,6 +307,7 @@ myStartupHook = do
                 spawnOnce "setxkbmap us &"
                 spawnOnce "redshift &"
                 spawnOnce "duplicati &"
+                spawnOnce "offlineimap &"
                 spawnOnce "emacs -bg black --daemon &"
                 spawnOnce "slack -u &"
                 setDefaultCursor xC_left_ptr

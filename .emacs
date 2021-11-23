@@ -26,7 +26,8 @@
 ;; Installs packages
 ;; myPackages contains a list of package names
 (defvar myPackages
-  '(elpy                            ;; Emacs Lisp Python Environment
+  '(use-package
+    elpy                            ;; Emacs Lisp Python Environment
     py-autopep8                     ;; Run autopep8 on save
     blacken                         ;; Black formatting on save
     projectile                      ;; Manage and navigate projects
@@ -252,7 +253,9 @@
           (lambda ()
             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
+;; mu4e location
+(load "~/.emacs_mu4e")
+
 ;; ===================================
 ;; end
 ;; ===================================
-

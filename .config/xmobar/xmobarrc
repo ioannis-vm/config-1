@@ -85,7 +85,9 @@ Config {
         , Run ComX "python3" ["/home/john_vm/.config/xmobar/aqi.py"] "" "aqi" 18000
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+        -- https://hackage.haskell.org/package/time-1.13/docs/Data-Time-Format.html
+        -- , Run Date           "<fc=#ABABAB>%b %e, %Y (%a) %I:%M %p</fc>" "date" 10
+        , Run ComX "python3"   ["/home/john_vm/.config/xmobar/date.py"] "" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us"         , "US")
