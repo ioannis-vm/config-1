@@ -215,6 +215,8 @@
 (add-hook 'org-mode-hook #'adaptive-wrap-prefix-mode)
 (require 'org-ref)
 (setq org-ref-default-citation-link "citep")
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+(setq org-support-shift-select t)
 
 ;; ===================================
 ;; Markdown mode
@@ -232,6 +234,10 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'adaptive-wrap-prefix-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
+(setq TeX-view-program-selection '((output-pdf "Zathura")))
+(setq TeX-save-query nil)
+(setq tex-fontify-script nil)
+(setq font-latex-fontify-script nil)
 
 ;; ===================================
 ;; Epub
@@ -259,3 +265,4 @@
 ;; ===================================
 ;; end
 ;; ===================================
+

@@ -51,6 +51,7 @@ myBrowser        = "qutebrowser"
 myGuiFM          = "pcmanfm"
 myPrintScreen    = "$HOME/.xmonad/select_screenshot"
 myGuiTextEditor  = "emacsclient -c"
+myMail           = "emacsclient -c -a '' --eval '(mu4e)'"
 
 ----------------
 -- workspaces --
@@ -88,8 +89,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch file manager
     , ((modm .|. shiftMask, xK_f     ), spawn myGuiFM)
 
-    -- launch GUI text editor
+    -- new emacsclient frame
     , ((modm .|. shiftMask, xK_e     ), spawn myGuiTextEditor)
+
+    -- email
+    , ((modm .|. shiftMask, xK_m     ), spawn myMail)
 
     -- launch dmenu todo list
     , ((modm .|. shiftMask, xK_t     ), spawn "$HOME/.xmonad/todo")
