@@ -22,9 +22,10 @@ Now `config` can be issued instaed of `git`, and the repository can be accessed 
 ```
 bash
 ```
-3. Don't show untracked files.
+3. Don't show untracked files, rename `master` to `main`.
 ```
 config config --local status.showUntrackedFiles no
+config branch -m master main
 ```
 
 ## Everyday use
