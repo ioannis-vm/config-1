@@ -90,13 +90,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_f     ), spawn myGuiFM)
 
     -- new emacsclient frame
-    , ((modm .|. shiftMask, xK_e     ), spawn myGuiTextEditor)
+    , ((modm .|. shiftMask, xK_t     ), spawn myGuiTextEditor)
 
     -- email
     , ((modm .|. shiftMask, xK_m     ), spawn myMail)
 
     -- launch dmenu todo list
-    , ((modm .|. shiftMask, xK_t     ), spawn "$HOME/.xmonad/todo")
+    , ((modm .|. shiftMask, xK_d     ), spawn "$HOME/.xmonad/todo")
 
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
@@ -175,7 +175,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
-
+    ++
+  
+    --
+    -- mod-{w,e,r}, Switch to physical/Xinerama screens 1, 2, or 3
+    -- mod-shift-{w,e,r}, Move client to screen 1, 2, or 3
+    --
+    [((m .|. modm, key), screenWorkspace sc >>= flip whenJust (windows . f))
+        | (key, sc) <- zip [xK_w, xK_e, xK_r] [0..]
+        , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
 --------------------
 -- Mouse bindings --
@@ -306,6 +314,7 @@ myLogHook = return ()
 ------------------
 
 myStartupHook = do
+                spawnOnce "xrandr --dpi 122"
                 spawnOnce "compton &"
 		spawnOnce "nitrogen --restore &"
                 spawnOnce "setxkbmap us &"
