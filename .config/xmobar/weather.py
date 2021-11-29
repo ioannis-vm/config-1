@@ -62,7 +62,7 @@ try:
         elif wind_flag:
             msg += ' <fc=#169490>heavy wind coming</fc>'
         
-    print(msg)
+    print(msg.replace("°", " F"))
 
 except:
 

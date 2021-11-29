@@ -42,9 +42,9 @@ Config {
                              ] 10
 
         -- cpu core temperature monitor
-        , Run CoreTemp       [ "--template" , "Temp: <core0>°C"
-                             , "--Low"      , "70"        -- units: °C
-                             , "--High"     , "80"        -- units: °C
+        , Run CoreTemp       [ "--template" , "Temp: <core0> C"
+                             , "--Low"      , "70"        -- units:  C
+                             , "--High"     , "80"        -- units:  C
                              , "--low"      , "darkgreen"
                              , "--normal"   , "darkorange"
                              , "--high"     , "red"
@@ -77,7 +77,7 @@ Config {
                              ] 50
 
         -- Weather
-        -- , Run Weather "KOAK" [ "--template", "<skyCondition> | <tempC>°C",
+        -- , Run Weather "KOAK" [ "--template", "<skyCondition> | <tempC>degC",
         --                        "-L","18","-H","27","--normal","lightblue","--high","darkorange","--low","cyan"] 9000
         -- Weather (custom)
         , Run ComX "python3" ["/home/john_vm/.config/xmobar/weather.py"] "" "weather" 18000
