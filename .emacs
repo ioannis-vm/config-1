@@ -260,7 +260,8 @@
             (define-key yaml-mode-map "\C-m" 'newline-and-indent)))
 
 ;; mu4e location
-(load "~/.emacs_mu4e")
+(when (string= system-name "Precision-5530")
+  (load "~/.emacs_mu4e"))
 
 ;; ===================================
 ;; end
