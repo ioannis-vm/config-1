@@ -110,12 +110,15 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
+alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
 alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
 alias gd='. /home/john_vm/.xmonad/gd.sh'
-alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
 alias dcal='date&&cal'
 alias todo='$HOME/.xmonad/todo'
 alias viber='/opt/viber/Viber'
+alias home_alone='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --off'
+alias home_portrait='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate left'
+alias home_landscape='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate normal'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
