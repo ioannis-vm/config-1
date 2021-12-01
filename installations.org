@@ -7,7 +7,7 @@ Basics
 sudo apt autoremove && \
 sudo apt update && \
 sudo apt upgrade && \
-sudo apt install make git
+jsudo apt install make git
 
 sudo ufw enable
 
@@ -20,6 +20,8 @@ Working environment basics
 #+BEGIN_SRC bash
 sudo apt install -y xmonad libghc-xmonad-contrib-dev xterm dmenu xmobar nitrogen redshift compton trash-cli scrot pcmanfm notify-osd lxappearance locate
 #+END_SRC
+
+locate wasn't found
 
 Working environment supplemental
 
@@ -38,11 +40,15 @@ sudo apt install -y emacs26
 sudo apt install mu4e
 #+END_SRC
 
+mu4e comes with mu from the AUR
+
 Alacritty
 #+BEGIN_SRC bash
 sudo add-apt-repository ppa:aslatter/ppa
 sudo apt install alacritty
 #+END_SRC
+
+alacritty is in the main repo
 
 Other software straight from apt
 
@@ -164,7 +170,107 @@ sudo lshw -class network -short
 Installation and setup instructions can be found [[https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#post-installation-actions][here]].
 
 
-Mail clienr
+Mail client
 #+BEGIN_SRC bash
 sudo apt install offlineimap
 #+END_SRC
+
+
+
+
+on arch
+
+also need to manually install:
+connman wpa_supplicant bluez
+ufw
+htop
+xrandr
+man
+lspci -k
+nvidia
+xorg
+xorg-xinit
+nitrogen compton emacs qutebrowser firefox
+alacritty
+
+base-devel
+dmenu
+xmonad xmonad-contrib
+xmobar
+offlineimap
+pcmanfm
+libreoffice-still
+pulseaudio
+alsa-utils (see arch wiki)
+vlc
+xclip
+pavucontrol
+
+htop
+xrandr
+lspci -k
+nvidia
+xorg
+xorg-xinit
+nitrogen compton emacs qutebrowser firefox
+termite alacritty
+base-devel
+dmenu
+xmonad xmonad-contrib
+xmobar
+zathura
+pulseaudio-alsa pulseaudio-bluetooth pulseaudio-equalizer pulseaudio-jack
+alsamixer
+ncpamixer
+alsa-utils
+offlineimap
+pcmanfm
+libreoffice-still
+pulseaudio
+ufw
+baobab
+rsync
+make
+redshift
+compton
+trash-cli
+scrot
+notify-osd
+lxappearance locate
+python-pip
+zathura-pdf-mupdf zathura-ps
+sxiv
+signal-desktop
+webkitgtk
+tldr
+unzip
+zotero
+virtualbox virtualbox-host-modules-arch
+neofetch
+latexmk
+texlive-most
+pavucontrol
+connman
+tor
+torbrowser-launcher
+rclone
+vlc
+xclip
+
+sixv # image viewer
+
+**** from yay
+slack
+zoom
+slack-desktop
+meh-git
+webkitgtk
+zotero
+viber-desktop
+viber
+mu
+img2pdf
+cmst
+
+from pip (after installing anaconda)
+python -m pip install gTTS
