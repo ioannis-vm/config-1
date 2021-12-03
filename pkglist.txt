@@ -137,6 +137,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+youtube-dl
 zathura
 zathura-pdf-mupdf
 zathura-ps
