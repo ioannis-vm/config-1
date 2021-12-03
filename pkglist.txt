@@ -8,7 +8,6 @@ base
 biber
 binutils
 bison
-cmst
 connman
 dmenu
 dosfstools
@@ -36,9 +35,7 @@ lxappearance
 m4
 make
 man-db
-meh-git
 mtools
-mu
 nano
 neofetch
 networkmanager
@@ -63,11 +60,9 @@ qutebrowser
 r
 rclone
 redshift
-rstudio-desktop-bin
 rsync
 scrot
 signal-desktop
-slack-desktop
 slock
 sudo
 sxiv
@@ -90,7 +85,6 @@ torbrowser-launcher
 trash-cli
 ufw
 unzip
-viber
 virtualbox
 virtualbox-host-modules-arch
 vlc
@@ -143,10 +137,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-yay-git
 zathura
 zathura-pdf-mupdf
 zathura-ps
 zip
-zoom
-zotero
