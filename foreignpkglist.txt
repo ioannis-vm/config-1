@@ -1,0 +1,9 @@
+cmst
+meh-git
+mu
+rstudio-desktop-bin
+slack-desktop
+viber
+yay-git
+zoom
+zotero
