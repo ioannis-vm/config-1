@@ -119,7 +119,7 @@ alias viber='/opt/viber/Viber'
 alias home_alone='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --off'
 alias home_portrait='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate left'
 alias home_landscape='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate normal'
-alias update_pkglists='pacman -Qqen > pkglist.txt && pacman -Qqem > foreignpkglist.txt'
+alias update_pkglists='pacman -Qqen > $(HOME)/pkglist.txt && pacman -Qqem > $(HOME)/foreignpkglist.txt'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
