@@ -64,6 +64,6 @@ try:
         
     print(msg.replace("°", " F"))
 
-except:
+except urllib.error.URLError:
 
-    print('weather error :(')
+    print("-")
