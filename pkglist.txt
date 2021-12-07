@@ -1,6 +1,6 @@
+0ad
 alacritty
 alsa-utils
-ark
 autoconf
 automake
 baobab
@@ -14,9 +14,11 @@ dosfstools
 efibootmgr
 emacs
 fakeroot
+file-roller
 firefox
 flex
 gcc
+gimp
 git
 gradle
 grub
@@ -44,6 +46,7 @@ nvidia
 offlineimap
 openjdk11-doc
 os-prober
+p7zip
 patch
 pavucontrol
 pcmanfm
