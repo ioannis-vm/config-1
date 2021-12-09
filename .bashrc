@@ -121,6 +121,14 @@ alias home_portrait='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mo
 alias home_landscape='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate normal'
 alias update_pkglists='pacman -Qqen > $(HOME)/pkglist.txt && pacman -Qqem > $(HOME)/foreignpkglist.txt'
 
+function cdls() {
+    new_directory="$*";
+    if [ $# -eq 0 ]; then 
+        new_directory=${HOME};
+    fi;
+    builtin cd "${new_directory}" && ls
+}
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
