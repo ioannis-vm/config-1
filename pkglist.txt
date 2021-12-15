@@ -1,4 +1,3 @@
-0ad
 alacritty
 alsa-utils
 autoconf
@@ -20,6 +19,7 @@ flex
 gcc
 gimp
 git
+gnu-netcat
 gradle
 grub
 htop
@@ -30,9 +30,9 @@ jre11-openjdk
 jre11-openjdk-headless
 lastpass-cli
 libreoffice-still
+links
 linux
 linux-firmware
-lmms
 lxappearance
 m4
 make
@@ -90,6 +90,7 @@ unzip
 virtualbox
 virtualbox-host-modules-arch
 vlc
+wget
 xclip
 xf86-video-vesa
 xmobar

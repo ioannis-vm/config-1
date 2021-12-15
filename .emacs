@@ -117,6 +117,19 @@
 ;; move files quickly from split view by pressing C
 (setq dired-dwim-target t)
 
+(defun open-terminal-in-workdir ()
+  (interactive)
+  (call-process-shell-command
+   (concat "alacritty") nil 0))
+(global-set-key (kbd "C-c t") 'open-terminal-in-workdir)
+
+(defun open-filemanager-in-workdir ()
+  (interactive)
+  (call-process-shell-command
+   (concat "pcmanfm") nil 0))
+(global-set-key (kbd "C-c f") 'open-filemanager-in-workdir)
+
+
 ;; ===================================
 ;; Ibuffer
 ;; ===================================
@@ -217,6 +230,11 @@
 (setq org-ref-default-citation-link "citep")
 (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
 (setq org-support-shift-select t)
+(setq org-confirm-babel-evaluate nil)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+(setq org-babel-python-command "~/anaconda3/envs/computing/bin/python")
 
 ;; ===================================
 ;; Markdown mode
