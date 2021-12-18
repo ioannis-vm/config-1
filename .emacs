@@ -236,6 +236,11 @@
  '((python . t)))
 (setq org-babel-python-command "~/anaconda3/envs/computing/bin/python")
 
+(setq org-todo-keywords '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+(when (string= system-name "Precision-5530")
+  (load "~/.emacs_gtd"))
+
+
 ;; ===================================
 ;; Markdown mode
 ;; ===================================

@@ -41,6 +41,7 @@ mtools
 nano
 neofetch
 nitrogen
+nodejs
 notify-osd
 nvidia
 offlineimap
