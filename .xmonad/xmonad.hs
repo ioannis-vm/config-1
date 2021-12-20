@@ -80,6 +80,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- launch dmenu shortcuts
     , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/.xmonad/dmenu_shortcuts")
 
+    -- launch dmenu gtd shortcuts
+    , ((modm .|. shiftMask, xK_d     ), spawn "$HOME/.xmonad/dmenu_gtd")
+
     -- launch dmenu zotero
     , ((modm .|. shiftMask, xK_l    ), spawn "$HOME/.xmonad/dmenu_zotero")
 
@@ -94,9 +97,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- email
     , ((modm .|. shiftMask, xK_m     ), spawn myMail)
-
-    -- launch dmenu todo list
-    , ((modm .|. shiftMask, xK_d     ), spawn "$HOME/.xmonad/todo")
 
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")

@@ -88,6 +88,7 @@ torbrowser-launcher
 trash-cli
 ufw
 unzip
+usbutils
 virtualbox
 virtualbox-host-modules-arch
 vlc
