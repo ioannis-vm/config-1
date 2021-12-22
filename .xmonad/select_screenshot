@@ -1,5 +1,5 @@
 #!/bin/sh
 
-SCREENSHOT_DIR=$HOME/Pictures
+SCREENSHOT_DIR=$HOME/Pictures/screenshots
 mkdir -p $SCREENSHOT_DIR
 sleep 0.2; scrot -s "$SCREENSHOT_DIR/%Y-%m-%d-%H%M%S.png" -e "xdg-open \$f"

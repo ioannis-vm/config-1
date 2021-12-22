@@ -257,6 +257,7 @@
 (add-hook 'LaTeX-mode-hook 'visual-line-mode)
 (add-hook 'LaTeX-mode-hook 'adaptive-wrap-prefix-mode)
 (add-hook 'LaTeX-mode-hook 'linum-mode)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex) 
 (setq TeX-view-program-selection '((output-pdf "Zathura")))
 (setq TeX-save-query nil)
 (setq tex-fontify-script nil)
