@@ -53,6 +53,7 @@ p7zip
 patch
 pavucontrol
 pcmanfm
+pdfarranger
 picom
 pkgconf
 pulseaudio
