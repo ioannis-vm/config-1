@@ -64,6 +64,9 @@
 ;; Basic Look
 ;; ===================================
 
+;;font
+(add-to-list 'default-frame-alist
+             '(font . "ubuntu mono-13"))
 ;; theme
 (load-theme 'ir-black t)
 ;; transparency
@@ -73,6 +76,9 @@
 (add-hook 'after-make-frame-functions
             (lambda (frame)
               (with-selected-frame frame
+		;; font
+		(add-to-list 'default-frame-alist
+			     '(font . "ubuntu mono-13"))
 		;; theme
                 (load-theme 'ir-black t)
 		;; transparency
