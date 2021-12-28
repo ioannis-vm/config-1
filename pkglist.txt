@@ -7,6 +7,7 @@ base
 biber
 binutils
 bison
+cmatrix
 connman
 dmenu
 dosfstools
@@ -46,6 +47,7 @@ nodejs
 notify-osd
 npm
 nvidia
+nvidia-settings
 offlineimap
 openjdk11-doc
 os-prober
@@ -147,6 +149,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xterm
 youtube-dl
 zathura
 zathura-pdf-mupdf
