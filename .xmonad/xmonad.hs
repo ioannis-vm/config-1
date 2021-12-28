@@ -315,7 +315,7 @@ myLogHook = return ()
 
 myStartupHook = do
                 spawnOnce "xrandr --dpi 122"
-                spawnOnce "compton &"
+                spawnOnce "picom &"
 		spawnOnce "nitrogen --restore &"
                 spawnOnce "setxkbmap us &"
                 spawnOnce "redshift &"
