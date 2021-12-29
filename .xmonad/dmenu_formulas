@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# Open file from zotero storage without launching zotero
+#
+
+#
+# Main script
+#
+
+# zotero storage folder
+storage_dir="$HOME/google_drive/UCB/research/resources/notes/formulas/"
+# pdf files
+files=$(find $storage_dir $encr_storage_dir -name '*.pdf')
+# height=$(find $storage_dir -name *.pdf | wc -l)  # huge
+# dmenu IO
+font="monofur-10"
+prompt="Select a file: "
+choice=$(printf '%s\n' "$files" | dmenu -i -l "20" -p "$prompt" -fn "$font")
+
+xdg-open "$choice"
