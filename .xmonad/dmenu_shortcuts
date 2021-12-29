@@ -30,8 +30,9 @@ height=$(wc -l "$file" | awk '{print $1}')
 readarray -t options < "$file"
 
 prompt="Select a bookmark: "
+font="monofur-10"
 
-choice=$(printf '%s\n' "${options[@]}" | dmenu -l "$height" -p "$prompt")
+choice=$(printf '%s\n' "${options[@]}" | dmenu -l "$height" -p "$prompt" -fn "$font")
 
 echo $choice
 

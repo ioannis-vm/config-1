@@ -75,7 +75,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
+    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run -fn monofur-10")
 
     -- launch dmenu shortcuts
     , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/.xmonad/dmenu_shortcuts")
@@ -85,6 +85,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch dmenu zotero
     , ((modm .|. shiftMask, xK_l    ), spawn "$HOME/.xmonad/dmenu_zotero")
+
+    -- launch dmenu formula sheets
+    , ((modm .|. shiftMask, xK_i    ), spawn "$HOME/.xmonad/dmenu_formulas")
 
     -- launch browser
     , ((modm .|. shiftMask, xK_b     ), spawn myBrowser)
