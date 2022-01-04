@@ -1,3 +1,4 @@
+0ad
 alacritty
 alsa-utils
 autoconf
@@ -7,6 +8,8 @@ base
 biber
 binutils
 bison
+blueman
+bluez-utils
 cmatrix
 connman
 dmenu
@@ -21,6 +24,7 @@ flex
 gcc
 gimp
 git
+globalprotect-openconnect
 gnu-netcat
 gradle
 grub
@@ -149,6 +153,7 @@ xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xscreensaver
 xterm
 youtube-dl
 zathura
