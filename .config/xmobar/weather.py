@@ -2,8 +2,13 @@ import urllib.request
 from bs4 import BeautifulSoup
 import numpy as np
 
+# Albany, CA. USA
 url = "https://weather.com/weather/hourbyhour/l/" + \
     "ae92ba08dec71ff144fa5ee2552626ea71a4d097c7e91bd7b0efc8a6ba553495"
+
+# Kamatero, Attica, Greece
+# url = "https://weather.com/weather/hourbyhour/l/" + \
+#     "9bc9881c8bad7e936504cfcacb9b59af9708840d00da79c3fdf47fbb69453159"
 
 try:
     page = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
