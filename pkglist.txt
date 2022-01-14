@@ -1,4 +1,3 @@
-0ad
 alacritty
 alsa-utils
 autoconf
@@ -16,6 +15,7 @@ dmenu
 dosfstools
 efibootmgr
 emacs
+evince
 fakeroot
 feh
 file-roller
@@ -76,6 +76,7 @@ rsync
 scrot
 signal-desktop
 slock
+speedtest-cli
 sudo
 sxiv
 testdisk
