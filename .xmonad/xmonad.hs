@@ -226,13 +226,13 @@ myClickJustFocuses = False
 -- Dimensions are given as (Border top bottom right left)
 mySpacing = spacingRaw True             -- Only for >1 window
                        -- The bottom edge seems to look narrower than it is
-                       (Border 5 5 5 5) -- Size of screen edge gaps
+                       (Border 7 7 7 7) -- Size of screen edge gaps
                        True             -- Enable screen edge gaps
-                       (Border 5 5 5 5) -- Size of window gaps
+                       (Border 7 7 7 7) -- Size of window gaps
                        True             -- Enable window gaps
 
 myBorderWidth :: Dimension
-myBorderWidth = 2
+myBorderWidth = 4
 
 myNormalBorderColor, myFocusedBorderColor :: [Char]
 myNormalBorderColor = "#111111"
@@ -318,23 +318,19 @@ myLogHook = return ()
 
 myStartupHook = do
                 spawnOnce "xrandr --dpi 122"
+                spawnOnce "setxkbmap us &"
+                spawnOnce "xmodmap -e \"add mod3 = Scroll_Lock\""
                 spawnOnce "picom &"
 		spawnOnce "nitrogen --restore &"
-                spawnOnce "setxkbmap us &"
                 spawnOnce "redshift &"
-                spawnOnce "duplicati &"
                 spawnOnce "offlineimap &"
                 spawnOnce "emacs -bg black --daemon &"
-                spawnOnce "slack -u &"
-                setDefaultCursor xC_left_ptr
                 setWMName "LG3D"
-
-
+                setDefaultCursor xC_left_ptr
 
 ----------
 -- MAIN --
 ----------
-
 
 main = do
        spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
