@@ -10,7 +10,7 @@
 # zotero storage folder
 storage_dir="$HOME/google_drive/UCB/research/resources/notes/formulas/"
 # pdf files
-files=$(find $storage_dir $encr_storage_dir -name '*.pdf')
+files=$(find $storage_dir -name '*.pdf' | sort)
 # height=$(find $storage_dir -name *.pdf | wc -l)  # huge
 # dmenu IO
 font="monofur-10"
