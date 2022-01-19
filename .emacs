@@ -35,7 +35,7 @@
     auctex                          ;; Integrated environment for *TeX*
     markdown-mode                   ;; markdown mode
     adaptive-wrap                   ;; Smart line-wrapping with wrap-prefix
-    ir-black-theme                  ;; A nice theme
+    material-theme                  ;; A nice theme
     irony                           ;; C/C++ minor mode powered by libclang
     irony-eldoc                     ;; irony-mode support for eldoc-mode
     flycheck                        ;; On-the-fly syntax checking
@@ -68,10 +68,10 @@
 (add-to-list 'default-frame-alist
              '(font . "monofur-10"))
 ;; theme
-(load-theme 'ir-black t)
+(load-theme 'material t)
 ;; transparency
-(set-frame-parameter (selected-frame) 'alpha '(93 . 93))
-(add-to-list 'default-frame-alist '(alpha . (93 . 93)))
+(set-frame-parameter (selected-frame) 'alpha '(98 . 98))
+(add-to-list 'default-frame-alist '(alpha . (98 . 98)))
 
 (add-hook 'after-make-frame-functions
             (lambda (frame)
@@ -80,10 +80,10 @@
 		(add-to-list 'default-frame-alist
 			     '(font . "monofur-10"))
 		;; theme
-                (load-theme 'ir-black t)
+                (load-theme 'material t)
 		;; transparency
-		(set-frame-parameter (selected-frame) 'alpha '(93 . 93))
-		(add-to-list 'default-frame-alist '(alpha . (93 . 93)))
+		(set-frame-parameter (selected-frame) 'alpha '(98 . 98))
+		(add-to-list 'default-frame-alist '(alpha . (98 . 98)))
 		)))
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (tool-bar-mode -1)                  ;; Hide toolbar
@@ -107,7 +107,7 @@
 		    ((numberp (cadr alpha)) (cadr alpha)))
 	      100)
 	 '(93 . 93) '(100 . 100)))))
-(global-set-key (kbd "C-c t") 'toggle-transparency)
+(global-set-key (kbd "C-c C-t") 'toggle-transparency)
 
 ;; ===================================
 ;; Don't make backup files
@@ -297,3 +297,16 @@
 ;; end
 ;; ===================================
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(material-theme yaml-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
