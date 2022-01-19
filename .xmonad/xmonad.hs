@@ -130,7 +130,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- change keyboard layout
     , ((mod1Mask,  xK_space   ),      spawn "/home/john_vm/.xmonad/keyboard_layout_switch.sh")
 
-    -- print screen (full screenshot)
+    -- print screen
     , ((0,  xK_Print), spawn myPrintScreen)
     
     -- Move focus to the next window
@@ -224,12 +224,21 @@ myClickJustFocuses = False
 -- Gaps around and between windows
 -- Changes applied after relogging in
 -- Dimensions are given as (Border top bottom right left)
-mySpacing = spacingRaw True             -- Only for >1 window
+mySpacing1 = spacingRaw True             -- Only for >1 window
                        -- The bottom edge seems to look narrower than it is
                        (Border 7 7 7 7) -- Size of screen edge gaps
                        True             -- Enable screen edge gaps
                        (Border 7 7 7 7) -- Size of window gaps
                        True             -- Enable window gaps
+
+-- zoom screen sharing controls...
+mySpacing2 = spacingRaw False
+                       (Border 80 7 7 7)
+                       True
+                       (Border 7 7 7 7)
+                       True
+
+mySpacing = mySpacing1
 
 myBorderWidth :: Dimension
 myBorderWidth = 4
