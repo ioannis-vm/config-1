@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+aspell-el
 autoconf
 automake
 baobab
