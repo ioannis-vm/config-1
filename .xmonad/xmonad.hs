@@ -48,7 +48,7 @@ import XMonad.Hooks.SetWMName
 
 myTerminal       = "alacritty"
 myBrowser        = "qutebrowser"
-myGuiFM          = "pcmanfm"
+myGuiFM          = "thunar"
 myPrintScreen    = "$HOME/.xmonad/select_screenshot"
 myGuiTextEditor  = "emacsclient -c"
 myMail           = "emacsclient -c -a '' --eval '(mu4e)'"
@@ -68,6 +68,7 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 -- https://www.stackage.org/haddock/lts-13.2/xmonad-0.15/src/XMonad.Config.html#keys
 
 myModMask       = mod4Mask
+altMask         = mod1Mask
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
@@ -100,6 +101,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- email
     , ((modm .|. shiftMask, xK_m     ), spawn myMail)
+
+    -- suspend
+    , ((altMask .|. controlMask, xK_s     ), spawn "systemctl suspend")
 
     -- change brightness
     , ((0, xF86XK_MonBrightnessUp), spawn "lux -a 10%")
@@ -166,7 +170,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
-    -- Restart xmonad
+    -- Quit, Restart xmonad
+    , ((controlMask .|. altMask, xK_q     ), io (exitWith ExitSuccess))
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
     ]
     ++
@@ -329,6 +334,7 @@ myStartupHook = do
                 spawnOnce "xrandr --dpi 122"
                 spawnOnce "setxkbmap us &"
                 spawnOnce "xmodmap -e \"add mod3 = Scroll_Lock\""
+                spawnOnce "thunar --daemon"
                 spawnOnce "picom &"
 		spawnOnce "nitrogen --restore &"
                 spawnOnce "redshift &"
@@ -336,6 +342,7 @@ myStartupHook = do
                 spawnOnce "emacs -bg black --daemon &"
                 setWMName "LG3D"
                 setDefaultCursor xC_left_ptr
+                spawnOnce "sleep 10 && firefox -new-window https://piazza.com/class/kym2za609j41l0"
 
 ----------
 -- MAIN --

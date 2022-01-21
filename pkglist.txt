@@ -95,6 +95,7 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 thermald
+thunar
 tldr
 tor
 torbrowser-launcher

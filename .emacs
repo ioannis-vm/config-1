@@ -132,7 +132,7 @@
 (defun open-filemanager-in-workdir ()
   (interactive)
   (call-process-shell-command
-   (concat "pcmanfm") nil 0))
+   (concat "thunar") nil 0))
 (global-set-key (kbd "C-c f") 'open-filemanager-in-workdir)
 
 
@@ -174,6 +174,9 @@
 
 ;; enable code folding
 (add-hook 'elpy-mode-hook 'hs-minor-mode)
+
+;; electric pair mode
+(add-hook 'elpy-mode-hook 'electric-pair-mode)
 
 
 ;; ===================================
@@ -303,7 +306,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(material-theme yaml-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap)))
+   '(csv-mode material-theme yaml-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
