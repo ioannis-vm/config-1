@@ -1,6 +1,7 @@
 alacritty
 alsa-utils
 aspell-el
+aspell-en
 autoconf
 automake
 baobab
@@ -33,6 +34,7 @@ htop
 img2pdf
 iwd
 jdk11-openjdk
+jhead
 jre11-openjdk
 jre11-openjdk-headless
 lastpass-cli
@@ -96,6 +98,8 @@ texlive-publishers
 texlive-science
 thermald
 thunar
+thunar-archive-plugin
+thunar-media-tags-plugin
 tldr
 tor
 torbrowser-launcher

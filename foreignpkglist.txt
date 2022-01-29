@@ -1,9 +1,9 @@
+clockify-desktop
 cmst
 meh-git
 mu
 nautilus-gnome-disks
 rstudio-desktop-bin
-slack-desktop
 spotify
 viber
 yay-git
