@@ -119,7 +119,7 @@ alias home_portrait='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mo
 alias home_landscape='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate normal && nitrogen --restore &'
 alias update_pkglists='pacman -Qqen > $(HOME)/pkglist.txt && pacman -Qqem > $(HOME)/foreignpkglist.txt'
 alias lock_screen='xscreensaver-command -lock'
-alias update_timezone='timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"'
+alias sync_time='timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"'
 
 function cdls() {
     new_directory="$*";
