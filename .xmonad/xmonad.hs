@@ -313,7 +313,7 @@ myManageHook = composeAll
 -- Event handling --
 --------------------
 
-myEventHook = mempty
+myEventHook = fullscreenEventHook
 
 
 -----------------------------
@@ -350,8 +350,7 @@ myStartupHook = do
 
 main = do
        spawnPipe "xmobar -x 0 $HOME/.config/xmobar/xmobarrc"
-       xmonad $ docks defaults
-
+       xmonad $ ewmh  defaults
 
 defaults = def {
       -- simple stuff
@@ -368,8 +367,8 @@ defaults = def {
         mouseBindings      = myMouseBindings,
       -- hooks, layouts
         layoutHook         = myLayout,
-        manageHook         = myManageHook,
-        handleEventHook    = myEventHook,
+        manageHook         = manageDocks <+> myManageHook,
+        handleEventHook    = myEventHook <+> docksEventHook,
         logHook            = myLogHook,
         startupHook        = myStartupHook
     }
