@@ -20,7 +20,7 @@ settings:
     - emacs
     - '{file}'
   fonts.default_family:
-    global: monofur
+    global: Serif
   url.default_page:
     global: https://www.duckduckgo.com/
   url.searchengines:

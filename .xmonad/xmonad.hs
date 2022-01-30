@@ -76,7 +76,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run -fn monofur-10")
+    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run -fn Serif-9")
 
     -- launch dmenu shortcuts
     , ((modm .|. shiftMask, xK_o     ), spawn "$HOME/.xmonad/dmenu_shortcuts")

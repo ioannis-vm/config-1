@@ -66,7 +66,7 @@
 
 ;;font
 (add-to-list 'default-frame-alist
-             '(font . "monofur-10"))
+             '(font . "Ubuntu Mono-10"))
 ;; theme
 (load-theme 'material t)
 ;; transparency
@@ -78,7 +78,7 @@
               (with-selected-frame frame
 		;; font
 		(add-to-list 'default-frame-alist
-			     '(font . "monofur-10"))
+			     '(font . "Ubuntu Mono-10"))
 		;; theme
                 (load-theme 'material t)
 		;; transparency

@@ -71,6 +71,7 @@ pulseaudio-bluetooth
 pulseaudio-equalizer
 pulseaudio-jack
 python-pip
+qt5-tools
 qutebrowser
 r
 rclone
