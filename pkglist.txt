@@ -32,6 +32,7 @@ gradle
 grub
 htop
 img2pdf
+inetutils
 iwd
 jdk11-openjdk
 jhead
@@ -59,6 +60,7 @@ offlineimap
 openjdk11-doc
 os-prober
 p7zip
+pandoc
 patch
 pavucontrol
 pcmanfm

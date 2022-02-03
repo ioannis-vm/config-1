@@ -110,10 +110,17 @@
 (global-set-key (kbd "C-c C-t") 'toggle-transparency)
 
 ;; ===================================
-;; Don't make backup files
+;; General Behavior
 ;; ===================================
 
+;; don't make backup files
 (setq make-backup-files nil)
+
+;; replace highlighted text when typing over it
+(delete-selection-mode 1)
+
+;; add a space after line numbers
+(setq linum-format "%d ")
 
 ;; ===================================
 ;; Dired
@@ -271,6 +278,8 @@
 (setq TeX-save-query nil)
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
+;; electric pair mode
+(add-hook 'LaTeX-mode-hook 'electric-pair-mode)
 
 ;; ===================================
 ;; Epub
