@@ -1,8 +1,9 @@
-clockify-desktop
 cmst
+gashell
 meh-git
 mu
 nautilus-gnome-disks
+nordvpn-bin
 rstudio-desktop-bin
 spotify
 viber

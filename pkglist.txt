@@ -56,6 +56,7 @@ notify-osd
 npm
 nvidia
 nvidia-settings
+oath-toolkit
 offlineimap
 openjdk11-doc
 os-prober
@@ -83,6 +84,7 @@ scrot
 signal-desktop
 slock
 speedtest-cli
+sshpass
 sudo
 sxiv
 testdisk
