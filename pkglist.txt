@@ -27,7 +27,10 @@ gcc
 gimp
 git
 globalprotect-openconnect
+gnome-icon-theme
+gnome-icon-theme-symbolic
 gnu-netcat
+gparted
 gradle
 grub
 htop
@@ -39,6 +42,8 @@ jhead
 jre11-openjdk
 jre11-openjdk-headless
 lastpass-cli
+libappindicator-gtk3
+libindicator-gtk3
 libreoffice-still
 links
 linux
