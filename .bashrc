@@ -123,7 +123,7 @@ alias office_landscape='xrandr --output eDP-1 --mode 1920x1080 --output DP-3 --m
 alias update_pkglists='pacman -Qqen > $(HOME)/pkglist.txt && pacman -Qqem > $(HOME)/foreignpkglist.txt'
 alias lock_screen='xscreensaver-command -lock'
 alias sync_time='timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"'
-alias matlab="$HOME/MATLAB/R2021b/bin/matlab"
+alias matlab="$HOME/MATLAB/R2021b/bin/matlab -softwareopengl"
 
 function cdls() {
     new_directory="$*";
