@@ -1,6 +1,5 @@
 cmst
 gashell
-libxcrypt-compat
 meh-git
 mu
 nautilus-gnome-disks

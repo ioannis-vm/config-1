@@ -102,6 +102,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- email
     , ((modm .|. shiftMask, xK_m     ), spawn myMail)
 
+    -- htop
+    , ((modm .|. shiftMask, xK_h     ), spawn "alacritty -e htop")
+
     -- suspend
     , ((altMask .|. controlMask, xK_s     ), spawn "systemctl suspend")
 
@@ -111,7 +114,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- volume control
     , ((0, 0x1008ff11), spawn "amixer -q sset Master 2%-")
-    , ((0, 0x1008ff12), spawn "pactl set-sink-mute 1 toggle")
+    , ((0, 0x1008ff12), spawn "amixer set Master toggle")
     , ((0, 0x1008ff13), spawn "amixer -q sset Master 2%+")
 
     -- media player control

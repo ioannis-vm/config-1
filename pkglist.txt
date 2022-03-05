@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+arch-audit
 aspell-el
 aspell-en
 autoconf
@@ -22,13 +23,12 @@ fakeroot
 feh
 file-roller
 firefox
+firejail
 flex
 gcc
 gimp
 git
 globalprotect-openconnect
-gnome-icon-theme
-gnome-icon-theme-symbolic
 gnu-netcat
 gparted
 gradle
@@ -36,15 +36,15 @@ grub
 htop
 img2pdf
 inetutils
+intel-ucode
 iwd
 jdk11-openjdk
 jhead
 jre11-openjdk
 jre11-openjdk-headless
 lastpass-cli
-libappindicator-gtk3
-libindicator-gtk3
 libreoffice-still
+libxcrypt-compat
 links
 linux
 linux-firmware
@@ -116,6 +116,7 @@ torbrowser-launcher
 trash-cli
 ufw
 unzip
+usbguard
 usbutils
 virtualbox
 virtualbox-host-modules-arch

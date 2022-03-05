@@ -29,7 +29,7 @@ settings:
       aw: https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go
       blib: https://search.library.berkeley.edu/discovery/search?vid=01UCS_BER:UCB&tab=Default_UCLibrarySearch&search_scope=DN_and_CI&offset=0&query=any,contains,{}
       dbw: https://www.designingbuildings.co.uk/w/index.php?title=Special%3ASearch&search={}
-      define: https://www.vocabulary.com/dictionary/{}
+      define: https://www.wordnik.com/words/{}
       engr: https://www.wordreference.com/engr/{}
       eqsa: https://journals.sagepub.com/action/doSearch?filterOption=thisJournal&SeriesKey=eqsa&AllField={}
       gren: https://www.wordreference.com/gren/{}
