@@ -109,6 +109,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+alias htop='htop -d 0.5'
 alias config='/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME'
 alias config2='/usr/bin/git --git-dir=/home/john_vm/dotfiles2 --work-tree=/home/john_vm'
 alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
@@ -124,6 +125,7 @@ alias update_pkglists='pacman -Qqen > $(HOME)/pkglist.txt && pacman -Qqem > $(HO
 alias lock_screen='xscreensaver-command -lock'
 alias sync_time='timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"'
 alias matlab="$HOME/MATLAB/R2021b/bin/matlab -softwareopengl"
+alias matlabnw="$HOME/MATLAB/R2021b/bin/matlab -nodisplay"
 
 function cdls() {
     new_directory="$*";
@@ -159,3 +161,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+neofetch
