@@ -34,6 +34,9 @@ fi
 
 # faster cursor movement and key repeats
 xset r rate 200 100
+# don't turn off screen
+xset s off
+
 # [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 exec xmonad
