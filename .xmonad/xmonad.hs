@@ -46,7 +46,7 @@ import XMonad.Hooks.SetWMName
 -- my applications --
 ---------------------
 
-myTerminal       = "alacritty"
+myTerminal       = "alacritty -e fish"
 myBrowser        = "qutebrowser"
 myGuiFM          = "thunar"
 myPrintScreen    = "$HOME/.xmonad/select_screenshot"
@@ -101,6 +101,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- email
     , ((modm .|. shiftMask, xK_m     ), spawn myMail)
+
+    -- quickly open emacs @ current project
+    , ((modm .|. shiftMask, xK_v   ), spawn "emacsclient -c $HOME/google_drive_encr/UCB/research/projects/299_report/299_report/main.tex")
 
     -- htop
     , ((modm .|. shiftMask, xK_h     ), spawn "alacritty -e htop")
@@ -337,15 +340,13 @@ myStartupHook = do
                 spawnOnce "xrandr --dpi 122"
                 spawnOnce "setxkbmap us &"
                 spawnOnce "xmodmap -e \"add mod3 = Scroll_Lock\""
-                spawnOnce "thunar --daemon"
                 spawnOnce "picom &"
 		spawnOnce "nitrogen --restore &"
                 spawnOnce "redshift &"
                 spawnOnce "offlineimap &"
-                spawnOnce "emacs -bg black --daemon &"
+                spawnOnce "emacs --daemon &"
                 setWMName "LG3D"
                 setDefaultCursor xC_left_ptr
-                spawnOnce "sleep 10 && firefox -new-window https://piazza.com/class/kym2za609j41l0"
 
 ----------
 -- MAIN --
