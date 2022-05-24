@@ -24,6 +24,7 @@ feh
 file-roller
 firefox
 firejail
+fish
 flex
 gcc
 gimp
@@ -36,13 +37,16 @@ grub
 htop
 img2pdf
 inetutils
+inkscape
 intel-ucode
+ispell
 iwd
 jdk11-openjdk
 jhead
 jre11-openjdk
 jre11-openjdk-headless
 lastpass-cli
+librecad
 libreoffice-still
 libxcrypt-compat
 links
@@ -66,6 +70,7 @@ offlineimap
 openjdk11-doc
 os-prober
 p7zip
+pacman-contrib
 pandoc
 patch
 pavucontrol
@@ -84,6 +89,7 @@ qutebrowser
 r
 rclone
 redshift
+rkhunter
 rsync
 scrot
 signal-desktop
@@ -114,6 +120,7 @@ tldr
 tor
 torbrowser-launcher
 trash-cli
+tree
 ufw
 unzip
 usbguard

@@ -1,11 +1,16 @@
 cmst
 gashell
+informant
+libselinux
 meh-git
 mu
 nautilus-gnome-disks
 nordvpn-bin
+pdfcropmargins
 rstudio-desktop-bin
+skypeforlinux-stable-bin
 spotify
+uxplay
 viber
 yay-git
 zoom
