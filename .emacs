@@ -35,7 +35,7 @@
     auctex                          ;; Integrated environment for *TeX*
     markdown-mode                   ;; markdown mode
     adaptive-wrap                   ;; Smart line-wrapping with wrap-prefix
-    material-theme                  ;; A nice theme
+    dracula-theme                   ;; A nice theme
     irony                           ;; C/C++ minor mode powered by libclang
     irony-eldoc                     ;; irony-mode support for eldoc-mode
     flycheck                        ;; On-the-fly syntax checking
@@ -46,10 +46,11 @@
     haskell-mode                    ;; Work with haskell files
     rainbow-mode		    ;; Colorize color names in buffers
     nov                             ;; epub reader. Oh, yeah!
-    no-littering                    ;; Place backup files elsewhere
     yaml-mode                       ;; Syntax highlighting for yaml files
     json-mode                       ;; Major mode for editing JSON files
     org-ref                         ;; citations in org-mode
+    bibtex-utils                    ;; Provides utilities for extending BibTeX mode
+    elfeed                          ;; an Emacs Atom/RSS feed reader
     )
   )
 
@@ -68,7 +69,7 @@
 (add-to-list 'default-frame-alist
              '(font . "Ubuntu Mono-10"))
 ;; theme
-(load-theme 'material t)
+(load-theme 'dracula t)
 ;; transparency
 (set-frame-parameter (selected-frame) 'alpha '(95 . 95))
 (add-to-list 'default-frame-alist '(alpha . (95 . 95)))
@@ -80,10 +81,9 @@
 		(add-to-list 'default-frame-alist
 			     '(font . "Ubuntu Mono-10"))
 		;; theme
-                (load-theme 'material t)
+                ;; (load-theme 'dracula t)
 		;; transparency
 		(set-frame-parameter (selected-frame) 'alpha '(95 . 95))
-		(add-to-list 'default-frame-alist '(alpha . (95 . 95)))
 		)))
 (setq inhibit-startup-message t)    ;; Hide the startup message
 (tool-bar-mode -1)                  ;; Hide toolbar
@@ -113,14 +113,41 @@
 ;; General Behavior
 ;; ===================================
 
-;; don't make backup files
-(setq make-backup-files nil)
+;; backup files
+(setq
+ make-backup-files t
+ vc-make-backup-files t
+ backup-directory-alist
+ '(("." . ".~"))
+ version-control t
+ kept-new-versions 1000
+ delete-old-versions t)
+;; backup on every save
+(defun force-backup-of-buffer ()
+  (setq buffer-backed-up nil))
+(add-hook 'before-save-hook  'force-backup-of-buffer)
+
+;; boost pointer movement speed
+(setq auto-window-vscroll nil)
 
 ;; replace highlighted text when typing over it
 (delete-selection-mode 1)
 
 ;; add a space after line numbers
 (setq linum-format "%d ")
+
+;; spell check
+(global-set-key (kbd "<f8>") 'ispell-word)
+(global-set-key (kbd "C-S-<f8>") 'flyspell-mode)
+(global-set-key (kbd "C-M-<f8>") 'flyspell-buffer)
+(global-set-key (kbd "C-<f8>") 'flyspell-check-previous-highlighted-word)
+(defun flyspell-check-next-highlighted-word ()
+  "Custom function to spell check next highlighted word"
+  (interactive)
+  (flyspell-goto-next-error)
+  (ispell-word)
+  )
+(global-set-key (kbd "M-<f8>") 'flyspell-check-next-highlighted-word)
 
 ;; ===================================
 ;; Dired
@@ -141,7 +168,9 @@
   (call-process-shell-command
    (concat "thunar") nil 0))
 (global-set-key (kbd "C-c f") 'open-filemanager-in-workdir)
-
+(setq
+ dired-kill-when-opening-new-dired-buffer t
+ )
 
 ;; ===================================
 ;; Ibuffer
@@ -256,6 +285,10 @@
 (when (string= system-name "Precision-5530")
   (load "~/.emacs_gtd"))
 
+;; word count
+(add-hook 'org-mode-hook #'wc-mode)
+;; instant spell checking
+(add-hook 'org-mode-hook 'flyspell-mode)
 
 ;; ===================================
 ;; Markdown mode
@@ -278,8 +311,14 @@
 (setq TeX-save-query nil)
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
+(setq LaTeX-command-style '(("" "%(PDF)%(latex) -shell-escape %S%(PDFout)")))
 ;; electric pair mode
 (add-hook 'LaTeX-mode-hook 'electric-pair-mode)
+;; instant spell checking
+(add-hook 'LaTeX-mode-hook 'flyspell-mode)
+;; BibLaTeX settings
+;; bibtex-mode
+(setq bibtex-dialect 'biblatex)
 
 ;; ===================================
 ;; Epub
@@ -306,16 +345,27 @@
   (load "~/.emacs_mu4e"))
 
 ;; ===================================
-;; end
+;; elfeed
 ;; ===================================
 
+(setq elfeed-feeds
+      '(
+	("https://www.engineeringvillage.com/rss/feed.url?queryID=M5162486e180a99060f7M7ffd127001&SYSTEM_PT=t" nonstructural components)
+	)
+      )
+
+;; ===================================
+;; end
+;; ===================================
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(elfeed-feeds
+   '("https://www.engineeringvillage.com/rss/feed.url?queryID=M5162486e180a99060f7M7ffd127001&SYSTEM_PT=t"))
  '(package-selected-packages
-   '(csv-mode material-theme yaml-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy company-rtags company-irony blacken auctex adaptive-wrap)))
+   '(elfeed bibtex-utils wc-mode yaml-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering nano-theme material-theme markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy dracula-theme csv-mode company-rtags company-irony blacken auctex adaptive-wrap)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
