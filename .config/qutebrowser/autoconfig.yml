@@ -27,24 +27,21 @@ settings:
     global:
       DEFAULT: https://duckduckgo.com/?q={}
       aw: https://wiki.archlinux.org/index.php?search={}&title=Special%3ASearch&go=Go
+      ggl: https://www.google.com/search?q={}
       blib: https://search.library.berkeley.edu/discovery/search?vid=01UCS_BER:UCB&tab=Default_UCLibrarySearch&search_scope=DN_and_CI&offset=0&query=any,contains,{}
       dbw: https://www.designingbuildings.co.uk/w/index.php?title=Special%3ASearch&search={}
-      define: https://www.wordnik.com/words/{}
+      ahd: https://www.ahdictionary.com/word/search.html?q={}
+      oed: https://www.oed.com/search?searchType=dictionary&q={}&_searchBtn=Search
       engr: https://www.wordreference.com/engr/{}
-      eqsa: https://journals.sagepub.com/action/doSearch?filterOption=thisJournal&SeriesKey=eqsa&AllField={}
       gren: https://www.wordreference.com/gren/{}
       healthline: https://www.healthline.com/search?q1={}
-      msch: https://academic.microsoft.com/search?q={}
       news: https://news.google.com/search?q={}
       nyt: https://www.nytimes.com/search?query={}
       opsp: https://openseespydoc.readthedocs.io/en/latest/search.html?q={}
-      pelicun: https://nheri-simcenter.github.io/pelicun/search.html?q={}
-      pkg: https://packages.ubuntu.com/search?suite=eoan&section=all&arch=any&keywords={}&searchon=contents
-      reverse: https://www.onelook.com/thesaurus/?s={}
+      thesaurus: https://www.thesaurus.com/browse/{}
       sch: https://scholar.google.com/scholar?q={}&authuser=1
-      wa: https://www.wolframalpha.com/input/?i={}
       wikipedia: https://en.wikipedia.org/w/index.php?title=Special:Search&search={}&fulltext=1&profile=default&ns0=1
-      wm: https://reference.wolfram.com/search/?q={}
       ytb: https://www.youtube.com/results?search_query={}
+      reverse: https://www.onelook.com/reverse-dictionary.shtml?s={}
   url.start_pages:
     global: about:blank
