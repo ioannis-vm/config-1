@@ -122,6 +122,7 @@ torbrowser-launcher
 trash-cli
 tree
 ufw
+unclutter
 unzip
 usbguard
 usbutils

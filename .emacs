@@ -35,7 +35,7 @@
     auctex                          ;; Integrated environment for *TeX*
     markdown-mode                   ;; markdown mode
     adaptive-wrap                   ;; Smart line-wrapping with wrap-prefix
-    dracula-theme                   ;; A nice theme
+    ir-black-theme                  ;; A nice theme
     irony                           ;; C/C++ minor mode powered by libclang
     irony-eldoc                     ;; irony-mode support for eldoc-mode
     flycheck                        ;; On-the-fly syntax checking
@@ -69,7 +69,7 @@
 (add-to-list 'default-frame-alist
              '(font . "Ubuntu Mono-10"))
 ;; theme
-(load-theme 'dracula t)
+(load-theme 'ir-black t)
 ;; transparency
 (set-frame-parameter (selected-frame) 'alpha '(95 . 95))
 (add-to-list 'default-frame-alist '(alpha . (95 . 95)))
@@ -81,7 +81,7 @@
 		(add-to-list 'default-frame-alist
 			     '(font . "Ubuntu Mono-10"))
 		;; theme
-                ;; (load-theme 'dracula t)
+                ;; (load-theme 'ir-black t)
 		;; transparency
 		(set-frame-parameter (selected-frame) 'alpha '(95 . 95))
 		)))
@@ -357,18 +357,3 @@
 ;; ===================================
 ;; end
 ;; ===================================
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(elfeed-feeds
-   '("https://www.engineeringvillage.com/rss/feed.url?queryID=M5162486e180a99060f7M7ffd127001&SYSTEM_PT=t"))
- '(package-selected-packages
-   '(elfeed bibtex-utils wc-mode yaml-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering nano-theme material-theme markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy dracula-theme csv-mode company-rtags company-irony blacken auctex adaptive-wrap)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

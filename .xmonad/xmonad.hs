@@ -346,6 +346,7 @@ myStartupHook = do
                 spawnOnce "offlineimap &"
                 spawnOnce "emacs --daemon &"
                 setWMName "LG3D"
+                spawnOnce "unclutter -idle 4"
                 setDefaultCursor xC_left_ptr
 
 ----------
