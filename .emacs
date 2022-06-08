@@ -214,6 +214,12 @@
 ;; electric pair mode
 (add-hook 'elpy-mode-hook 'electric-pair-mode)
 
+;; ===================================
+;; Ein
+;; ===================================
+
+(setq ein:output-area-inlined-images t)
+(setq ein:slice-image t)
 
 ;; ===================================
 ;; C++
