@@ -46,7 +46,7 @@ import XMonad.Hooks.SetWMName
 -- my applications --
 ---------------------
 
-myTerminal       = "alacritty -e fish"
+myTerminal       = "alacritty"
 myBrowser        = "qutebrowser"
 myGuiFM          = "thunar"
 myPrintScreen    = "$HOME/.xmonad/select_screenshot"
@@ -101,9 +101,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- email
     , ((modm .|. shiftMask, xK_m     ), spawn myMail)
-
-    -- quickly open emacs @ current project
-    , ((modm .|. shiftMask, xK_v   ), spawn "emacsclient -c $HOME/google_drive_encr/UCB/research/projects/299_report/299_report/main.tex")
 
     -- htop
     , ((modm .|. shiftMask, xK_h     ), spawn "alacritty -e htop")
@@ -345,6 +342,7 @@ myStartupHook = do
                 spawnOnce "redshift &"
                 spawnOnce "offlineimap &"
                 spawnOnce "emacs --daemon &"
+                spawnOnce "npm start --prefix nocodb/nocodb-seed &"
                 setWMName "LG3D"
                 spawnOnce "unclutter -idle 4"
                 setDefaultCursor xC_left_ptr
