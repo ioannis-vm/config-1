@@ -1,5 +1,6 @@
 alacritty
 alsa-utils
+arandr
 arch-audit
 aspell-el
 aspell-en
@@ -12,6 +13,7 @@ binutils
 bison
 blueman
 bluez-utils
+chromium
 cmatrix
 connman
 dmenu
@@ -24,7 +26,6 @@ feh
 file-roller
 firefox
 firejail
-fish
 flex
 gcc
 gimp
@@ -56,6 +57,7 @@ lxappearance
 m4
 make
 man-db
+mariadb
 mtools
 nano
 neofetch
