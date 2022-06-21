@@ -1,5 +1,6 @@
 bfg
 cmst
+eclipse-java
 gashell
 informant
 libselinux

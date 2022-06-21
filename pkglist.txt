@@ -8,6 +8,7 @@ autoconf
 automake
 baobab
 base
+bc
 biber
 binutils
 bison
@@ -27,6 +28,7 @@ file-roller
 firefox
 firejail
 flex
+fzf
 gcc
 gimp
 git
@@ -85,6 +87,7 @@ pulseaudio-alsa
 pulseaudio-bluetooth
 pulseaudio-equalizer
 pulseaudio-jack
+pycharm-community-edition
 python-pip
 qt5-tools
 qutebrowser
@@ -93,6 +96,7 @@ rclone
 redshift
 rkhunter
 rsync
+screen
 scrot
 signal-desktop
 slock

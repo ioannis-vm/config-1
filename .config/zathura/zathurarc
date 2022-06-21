@@ -1,1 +1,3 @@
 set selection-clipboard clipboard
+map <C-c> feedkeys ":exec sh -c \"echo $FILE | xclip -i -sel clip\"<Return>"
+map <C-b> feedkeys ":exec zathura $FILE -P $PAGE<Return>"

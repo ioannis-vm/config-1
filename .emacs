@@ -51,6 +51,7 @@
     org-ref                         ;; citations in org-mode
     bibtex-utils                    ;; Provides utilities for extending BibTeX mode
     elfeed                          ;; an Emacs Atom/RSS feed reader
+    openwith                        ;; Open files with external programs
     )
   )
 
@@ -67,7 +68,7 @@
 
 ;;font
 (add-to-list 'default-frame-alist
-             '(font . "Ubuntu Mono-10"))
+             '(font . "Source Code Pro-10"))
 ;; theme
 (load-theme 'ir-black t)
 ;; transparency
@@ -79,7 +80,7 @@
               (with-selected-frame frame
 		;; font
 		(add-to-list 'default-frame-alist
-			     '(font . "Ubuntu Mono-10"))
+			     '(font . "Source Code Pro-10"))
 		;; theme
                 ;; (load-theme 'ir-black t)
 		;; transparency
@@ -148,6 +149,11 @@
   (ispell-word)
   )
 (global-set-key (kbd "M-<f8>") 'flyspell-check-next-highlighted-word)
+
+;; Open PDFs with zathura
+(require 'openwith)
+(openwith-mode t)
+(setq openwith-associations '(("\\.pdf\\'" "zathura" (file))))
 
 ;; ===================================
 ;; Dired
@@ -277,6 +283,7 @@
 ;; enable adaptive line wrapping
 (add-hook 'org-mode-hook #'visual-line-mode)
 (add-hook 'org-mode-hook #'adaptive-wrap-prefix-mode)
+(add-hook 'org-mode-hook #'org-indent-mode)
 (require 'org-ref)
 (setq org-ref-default-citation-link "citep")
 (setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
@@ -295,6 +302,18 @@
 (add-hook 'org-mode-hook #'wc-mode)
 ;; instant spell checking
 (add-hook 'org-mode-hook 'flyspell-mode)
+
+;; Org-habit
+(use-package org-habit
+  :after org
+  :config
+  (setq org-habit-following-days 7
+        org-habit-preceding-days 35
+        org-habit-show-habits t)  )
+
+;; Open URLs in qutebrowser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "qutebrowser")
 
 ;; ===================================
 ;; Markdown mode
@@ -363,3 +382,21 @@
 ;; ===================================
 ;; end
 ;; ===================================
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files
+   '("/home/john_vm/google_drive_encr/journaling/org/habits.org" "/home/john_vm/google_drive_encr/journaling/org/someday.org" "/home/john_vm/google_drive_encr/UCB/research/projects/PBE_sensitivity_analysis/notes/todo.org" "/home/john_vm/google_drive_encr/journaling/org/gtd.org" "/home/john_vm/google_drive_encr/UCB/research/projects/PBE_sensitivity_analysis/notes/deadlines.org" "/home/john_vm/google_drive_encr/journaling/org/inbox.org" "/home/john_vm/google_drive_encr/journaling/org/tickler.org"))
+ '(org-modules
+   '(ol-bbdb ol-bibtex ol-docview ol-doi ol-eww ol-gnus org-habit ol-info ol-irc ol-mhe ol-rmail ol-w3m))
+ '(package-selected-packages
+   '(openwith yaml-mode wc-mode use-package rainbow-mode py-autopep8 projectile org-ref nov no-littering nano-theme material-theme markdown-mode magit json-mode irony-eldoc ir-black-theme haskell-mode flycheck-irony elpy elfeed ein dracula-theme csv-mode company-rtags company-irony blacken bibtex-utils auctex adaptive-wrap)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
