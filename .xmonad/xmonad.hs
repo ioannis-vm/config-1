@@ -249,11 +249,11 @@ mySpacing2 = spacingRaw False
 mySpacing = mySpacing1
 
 myBorderWidth :: Dimension
-myBorderWidth = 4
+myBorderWidth = 1
 
 myNormalBorderColor, myFocusedBorderColor :: [Char]
 myNormalBorderColor = "#111111"
-myFocusedBorderColor = "#268bd2"
+myFocusedBorderColor = "#ff0000"
 
 
 

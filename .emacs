@@ -155,6 +155,9 @@
 (openwith-mode t)
 (setq openwith-associations '(("\\.pdf\\'" "zathura" (file))))
 
+;; Remove initial scratch buffer message
+(setq initial-scratch-message "")
+
 ;; ===================================
 ;; Dired
 ;; ===================================
