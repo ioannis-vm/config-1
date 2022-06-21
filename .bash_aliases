@@ -37,3 +37,4 @@ alias sync_time='timedatectl set-timezone "$(curl --fail https://ipapi.co/timezo
 alias matlab="/usr/local/MATLAB/R2019a/bin/matlab -softwareopengl"
 alias matlabnw="$HOME/MATLAB/R2021b/bin/matlab -nodisplay"
 alias open="xdg-open"
+alias fuzzy_find="g --heading --line-number --column . | fzf --layout=reverse"
