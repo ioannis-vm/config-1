@@ -392,7 +392,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files
-   '("/home/john_vm/google_drive_encr/journaling/org/habits.org" "/home/john_vm/google_drive_encr/journaling/org/someday.org" "/home/john_vm/google_drive_encr/UCB/research/projects/PBE_sensitivity_analysis/notes/todo.org" "/home/john_vm/google_drive_encr/journaling/org/gtd.org" "/home/john_vm/google_drive_encr/UCB/research/projects/PBE_sensitivity_analysis/notes/deadlines.org" "/home/john_vm/google_drive_encr/journaling/org/inbox.org" "/home/john_vm/google_drive_encr/journaling/org/tickler.org"))
+   '("/home/john_vm/google_drive_encr/journaling/org/tickler.org" "/home/john_vm/google_drive_encr/journaling/org/habits.org" "/home/john_vm/google_drive_encr/journaling/org/someday.org" "/home/john_vm/google_drive_encr/UCB/research/projects/PBE_sensitivity_analysis/notes/todo.org" "/home/john_vm/google_drive_encr/journaling/org/gtd.org" "/home/john_vm/google_drive_encr/UCB/research/projects/PBE_sensitivity_analysis/notes/deadlines.org" "/home/john_vm/google_drive_encr/journaling/org/inbox.org"))
  '(org-modules
    '(ol-bbdb ol-bibtex ol-docview ol-doi ol-eww ol-gnus org-habit ol-info ol-irc ol-mhe ol-rmail ol-w3m))
  '(package-selected-packages
