@@ -14,7 +14,7 @@ binutils
 bison
 blueman
 bluez-utils
-chromium
+ca-certificates
 cmatrix
 connman
 dmenu
@@ -94,6 +94,7 @@ qutebrowser
 r
 rclone
 redshift
+reflector
 rkhunter
 rsync
 screen
@@ -136,6 +137,7 @@ virtualbox
 virtualbox-host-modules-arch
 vlc
 wget
+wpa_supplicant
 xclip
 xf86-video-vesa
 xmobar
