@@ -26,6 +26,7 @@ alias ding='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
 alias gd='. /home/john_vm/.xmonad/gd.sh'
 alias ms='. /home/john_vm/.xmonad/ms.sh'
 alias sv='. /home/john_vm/.xmonad/sv.sh'
+alias tb='. /home/john_vm/.xmonad/tb.sh'
 alias home_alone='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --off --output DP-3 --off && nitrogen --restore  && xset r rate 200 100'
 alias home_portrait='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate left && nitrogen --restore  && xset r rate 200 100'
 alias home_landscape='xrandr --output eDP-1 --mode 1920x1080 --output DP-1-2 --mode 2560x1440 --right-of eDP-1 --rotate normal && nitrogen --restore  && xset r rate 200 100'
@@ -37,4 +38,4 @@ alias sync_time='timedatectl set-timezone "$(curl --fail https://ipapi.co/timezo
 alias matlab="/usr/local/MATLAB/R2019a/bin/matlab -softwareopengl"
 alias matlabnw="$HOME/MATLAB/R2021b/bin/matlab -nodisplay"
 alias open="xdg-open"
-alias fuzzy_find="g --heading --line-number --column . | fzf --layout=reverse"
+alias fuzzy_find="rg --heading --line-number --column . | fzf --layout=reverse"
